@@ -17,7 +17,7 @@ The goal of this app is to give the user a quick overview of the semantic and cu
 * Users can save particular phrases from word usage and trending information in every format for the entered word. 
 
 ## Data Sources
-* API Documentation for word translation: https://cloud.google.com/translate/docs/
+* API Documentation for random word generator:  https://apifort-random-word-v1.p.mashape.com/v1/generate/randomword
 * API Documentation for Word Usage:  http://www.pressmon.com/en/docs
 * API Documentation for Social Usage: http://trendspottr.com/api/v1.5/searchAPIDoc
 
