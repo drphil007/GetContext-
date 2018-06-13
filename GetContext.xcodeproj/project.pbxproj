@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		153C9FA820C93888009E8EF9 /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 153C9FA720C93888009E8EF9 /* GoogleService-Info (2).plist */; };
-		153C9FAA20C9737B009E8EF9 /* Montserrat in Resources */ = {isa = PBXBuildFile; fileRef = 153C9FA920C9737B009E8EF9 /* Montserrat */; };
+		153C9FA820C93888009E8EF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 153C9FA720C93888009E8EF9 /* GoogleService-Info.plist */; };
 		153C9FAC20C9D3A4009E8EF9 /* EnterWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C9FAB20C9D3A4009E8EF9 /* EnterWordViewController.swift */; };
 		153C9FAE20C9D6B1009E8EF9 /* ChooseContextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C9FAD20C9D6B1009E8EF9 /* ChooseContextViewController.swift */; };
 		153C9FB020CA01D0009E8EF9 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 153C9FAF20CA01D0009E8EF9 /* doc */; };
+		15CE735520CFCB2400720FD8 /* MyWordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735420CFCB2400720FD8 /* MyWordsData.swift */; };
+		15CE735720CFCB6100720FD8 /* MyWordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */; };
+		15CE735920CFCBC800720FD8 /* SavedContextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */; };
+		15CE735B20CFCC4D00720FD8 /* ContextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735A20CFCC4D00720FD8 /* ContextData.swift */; };
+		15CE735D20CFDFBE00720FD8 /* SocialContextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */; };
+		15CE735F20CFE47800720FD8 /* ContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735E20CFE47800720FD8 /* ContextController.swift */; };
+		15CE736320D1A52300720FD8 /* DailyWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE736220D1A52300720FD8 /* DailyWordViewController.swift */; };
 		15D0C86020C5D8D60024DBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C85F20C5D8D60024DBA1 /* AppDelegate.swift */; };
 		15D0C86220C5D8D60024DBA1 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C86120C5D8D60024DBA1 /* IntroductionViewController.swift */; };
 		15D0C86520C5D8D60024DBA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D0C86320C5D8D60024DBA1 /* Main.storyboard */; };
@@ -40,11 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		153C9FA720C93888009E8EF9 /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
-		153C9FA920C9737B009E8EF9 /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Montserrat; sourceTree = "<group>"; };
+		153C9FA720C93888009E8EF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		153C9FAB20C9D3A4009E8EF9 /* EnterWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWordViewController.swift; sourceTree = "<group>"; };
 		153C9FAD20C9D6B1009E8EF9 /* ChooseContextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseContextViewController.swift; sourceTree = "<group>"; };
 		153C9FAF20CA01D0009E8EF9 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
+		15CE735420CFCB2400720FD8 /* MyWordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWordsData.swift; sourceTree = "<group>"; };
+		15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWordsTableViewController.swift; sourceTree = "<group>"; };
+		15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedContextTableViewController.swift; sourceTree = "<group>"; };
+		15CE735A20CFCC4D00720FD8 /* ContextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextData.swift; sourceTree = "<group>"; };
+		15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialContextTableViewController.swift; sourceTree = "<group>"; };
+		15CE735E20CFE47800720FD8 /* ContextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextController.swift; sourceTree = "<group>"; };
+		15CE736220D1A52300720FD8 /* DailyWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordViewController.swift; sourceTree = "<group>"; };
 		15D0C85C20C5D8D60024DBA1 /* GetContext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetContext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D0C85F20C5D8D60024DBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D0C86120C5D8D60024DBA1 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				153C9FAF20CA01D0009E8EF9 /* doc */,
-				153C9FA920C9737B009E8EF9 /* Montserrat */,
 				15D0C85E20C5D8D60024DBA1 /* GetContext */,
 				15D0C87320C5D8D90024DBA1 /* GetContextTests */,
 				15D0C87E20C5D8D90024DBA1 /* GetContextUITests */,
@@ -119,12 +130,19 @@
 				15D0C85F20C5D8D60024DBA1 /* AppDelegate.swift */,
 				15D0C86120C5D8D60024DBA1 /* IntroductionViewController.swift */,
 				153C9FAB20C9D3A4009E8EF9 /* EnterWordViewController.swift */,
-				15D0C86320C5D8D60024DBA1 /* Main.storyboard */,
+				15CE736220D1A52300720FD8 /* DailyWordViewController.swift */,
 				153C9FAD20C9D6B1009E8EF9 /* ChooseContextViewController.swift */,
+				15CE735A20CFCC4D00720FD8 /* ContextData.swift */,
+				15CE735E20CFE47800720FD8 /* ContextController.swift */,
+				15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */,
+				15D0C86320C5D8D60024DBA1 /* Main.storyboard */,
+				15CE735420CFCB2400720FD8 /* MyWordsData.swift */,
+				15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */,
+				15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */,
 				15D0C86620C5D8D80024DBA1 /* Assets.xcassets */,
 				15D0C86820C5D8D80024DBA1 /* LaunchScreen.storyboard */,
 				15D0C86B20C5D8D80024DBA1 /* Info.plist */,
-				153C9FA720C93888009E8EF9 /* GoogleService-Info (2).plist */,
+				153C9FA720C93888009E8EF9 /* GoogleService-Info.plist */,
 			);
 			path = GetContext;
 			sourceTree = "<group>";
@@ -272,10 +290,9 @@
 			files = (
 				15D0C86A20C5D8D80024DBA1 /* LaunchScreen.storyboard in Resources */,
 				15D0C86720C5D8D80024DBA1 /* Assets.xcassets in Resources */,
-				153C9FA820C93888009E8EF9 /* GoogleService-Info (2).plist in Resources */,
+				153C9FA820C93888009E8EF9 /* GoogleService-Info.plist in Resources */,
 				153C9FB020CA01D0009E8EF9 /* doc in Resources */,
 				15D0C86520C5D8D60024DBA1 /* Main.storyboard in Resources */,
-				153C9FAA20C9737B009E8EF9 /* Montserrat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,10 +360,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CE735720CFCB6100720FD8 /* MyWordsTableViewController.swift in Sources */,
 				15D0C86220C5D8D60024DBA1 /* IntroductionViewController.swift in Sources */,
 				15D0C86020C5D8D60024DBA1 /* AppDelegate.swift in Sources */,
+				15CE735F20CFE47800720FD8 /* ContextController.swift in Sources */,
+				15CE735B20CFCC4D00720FD8 /* ContextData.swift in Sources */,
+				15CE735D20CFDFBE00720FD8 /* SocialContextTableViewController.swift in Sources */,
+				15CE735520CFCB2400720FD8 /* MyWordsData.swift in Sources */,
 				153C9FAC20C9D3A4009E8EF9 /* EnterWordViewController.swift in Sources */,
+				15CE736320D1A52300720FD8 /* DailyWordViewController.swift in Sources */,
 				153C9FAE20C9D6B1009E8EF9 /* ChooseContextViewController.swift in Sources */,
+				15CE735920CFCBC800720FD8 /* SavedContextTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

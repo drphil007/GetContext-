@@ -9,33 +9,31 @@
 import UIKit
 
 class EnterWordViewController: UIViewController {
-
+ 
+    @IBOutlet weak var wordField: UITextField!
     @IBOutlet weak var getContextButton: UIButton!
     
+    
+    @IBAction func wordFieldChanged(_ sender: UITextField) {
+        // Set text to entered word
+        // keep CurrentWord and send to Context
+        // make sure user enters word
+    }
+    
+    // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set border for getContextButton, specifies layout styles.
         getContextButton.layer.borderWidth = 1
         getContextButton.layer.borderColor = UIColor.white.cgColor
         getContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Dispose of any recources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
 
+    // Pass data to the Context Views: Segue.
 }

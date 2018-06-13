@@ -2,13 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>https://od-api.oxforddictionaries.com:443/api/v1</key>
+			<string></string>
+			<key>api.trendspottr.com</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>UIAppFonts</key>
-	<array>
-		<string>Monsterrat-italic.tff</string>
-		<string>Monsterrat-ExtraBoldItalic.tff</string>
-		<string>Monsterrat-ExtraBold.ttf</string>
-		<string>Monsterrat-Black.ttf</string>
-	</array>
+	<array/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
