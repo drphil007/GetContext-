@@ -10,14 +10,17 @@ import UIKit
 
 class EnterWordViewController: UIViewController {
  
+    
     @IBOutlet weak var wordField: UITextField!
     @IBOutlet weak var getContextButton: UIButton!
     
     
     @IBAction func wordFieldChanged(_ sender: UITextField) {
         // Set text to entered word
-        // keep CurrentWord and send to Context
-        // make sure user enters word
+        currentWord = wordField.text!
+    
+        //print(currentWord)
+        // keep currentWord and send to Context
     }
     
     // Do any additional setup after loading the view.
@@ -30,6 +33,45 @@ class EnterWordViewController: UIViewController {
         getContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
     }
     
+    @IBAction func getContextPressed(_ sender: Any) {
+        // make sure user enters word
+        if currentWord.isEmpty {
+            createAlert(title: "Word Missing", message: "Enter a Word to continue")
+        }
+        else {
+            print(currentWord)
+            // Go to Context View
+            self.performSegue(withIdentifier: "getContext", sender: self)
+        }
+    }
+    
+    // Function to create Alert message.
+    func createAlert(title: String, message: String) {
+        
+        // Create alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // add Cancel button
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // add Text Field
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Enter word here..."
+        })
+        
+        // add Ok button
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+            // print name when entered
+            if let currentWord = alert.textFields?.first?.text {
+                print("Word: \(currentWord)")
+                self.performSegue(withIdentifier: "getContext", sender: self)
+            }
+        }))
+        // show alert
+        self.present(alert, animated: true)
+    }
+    
     // Dispose of any recources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,3 +79,4 @@ class EnterWordViewController: UIViewController {
 
     // Pass data to the Context Views: Segue.
 }
+

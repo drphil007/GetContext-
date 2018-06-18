@@ -57,6 +57,9 @@
 		15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialContextTableViewController.swift; sourceTree = "<group>"; };
 		15CE735E20CFE47800720FD8 /* ContextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextController.swift; sourceTree = "<group>"; };
 		15CE736220D1A52300720FD8 /* DailyWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordViewController.swift; sourceTree = "<group>"; };
+		15CE736420D8319500720FD8 /* PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROCESS.md; sourceTree = "<group>"; };
+		15CE736520D8319500720FD8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		15CE736620D8319800720FD8 /* DESIGN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
 		15D0C85C20C5D8D60024DBA1 /* GetContext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetContext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D0C85F20C5D8D60024DBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D0C86120C5D8D60024DBA1 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +107,9 @@
 		15D0C85320C5D8D60024DBA1 = {
 			isa = PBXGroup;
 			children = (
+				15CE736420D8319500720FD8 /* PROCESS.md */,
+				15CE736520D8319500720FD8 /* README.md */,
+				15CE736620D8319800720FD8 /* DESIGN.md */,
 				153C9FAF20CA01D0009E8EF9 /* doc */,
 				15D0C85E20C5D8D60024DBA1 /* GetContext */,
 				15D0C87320C5D8D90024DBA1 /* GetContextTests */,

@@ -12,22 +12,19 @@ class IntroductionViewController: UIViewController {
 
     @IBOutlet weak var enterNameField: UITextField!
     @IBOutlet weak var startContextButton: UIButton!
-    @IBOutlet weak var dailywordButton: UIButton!
-    @IBOutlet weak var myWordsButton: UIButton!
 
+    //var alertController: UIAlertController?
     
     @IBAction func enterNameTapped(_ sender: UITextField) {
         // Set user Index
         userIndex += 1
         
-        // Set text to username of current player.
-        if let text = sender.text {
-            userName = text
-            if userName.isEmpty {
-                userName = "User \(userIndex)"
-            }
-        }
-        print(userName)
+        // set username to entered text
+        userName = enterNameField.text!
+        //print(userName)
+        
+        // send to firebase and log in (for mywords)
+
     }
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -38,29 +35,57 @@ class IntroductionViewController: UIViewController {
         startContextButton.layer.borderWidth = 1
         startContextButton.layer.borderColor = UIColor.white.cgColor
         startContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        
-        // Set border for dailywordButton, specifies layout styles.
-        dailywordButton.layer.borderWidth = 1
-        dailywordButton.layer.borderColor = UIColor.white.cgColor
-        dailywordButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        
-        // Set border for myWordsButton, specifies layout styles.
-        myWordsButton.layer.borderWidth = 1
-        myWordsButton.layer.borderColor = UIColor.white.cgColor
-        myWordsButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
        
-        // Set name field.
-        enterNameField.delegate = self as? UITextFieldDelegate
-        
+//        // Set name field.
+//        enterNameField.delegate = self as? UITextFieldDelegate
     }
     
-    // Set textfield to entered text.
-    func textFieldSet(_ textField: UITextField) -> Bool {
-        if textField == enterNameField {
-            textField.resignFirstResponder()
+    @IBAction func startPressed(_ sender: Any) {
+        if (userName.isEmpty) {
+            // Create Alert with function createAlert
+            createAlert(title: "Name missing", message: "Enter your name to continue")
         }
-        return true
+        else {
+            // Go to next view of game
+            print(userName)
+            self.performSegue(withIdentifier: "startContext", sender: self)
+        }
     }
+    
+    // Function to create Alert message.
+    func createAlert(title: String, message: String) {
+        
+        // Create alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // add Cancel button
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // add Text Field
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Enter name here..."
+        })
+        
+        // add Ok button
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+            // print name when entered
+            if let name = alert.textFields?.first?.text {
+                print("Your name: \(name)")
+                self.performSegue(withIdentifier: "startContext", sender: self)
+            }
+        }))
+        // show alert
+        self.present(alert, animated: true)
+    }
+    
+//    // Set textfield to entered text.
+//    func textFieldSet(_ textField: UITextField) -> Bool {
+//        if textField == enterNameField {
+//            textField.resignFirstResponder()
+//        }
+//        return true
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

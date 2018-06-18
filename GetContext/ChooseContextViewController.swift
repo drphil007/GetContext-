@@ -9,37 +9,36 @@
 import UIKit
 
 class ChooseContextViewController: UIViewController {
+    
+    @IBOutlet weak var generalDiscriptionLabel: UILabel!
+    @IBOutlet weak var phrasesDiscriptionLabel: UILabel!
+    @IBOutlet weak var socialDiscriptionLabel: UILabel!
+    
 
-//    var storeWordInfo = [StoreWordInfo]()
+    //    var storeWordInfo = [StoreWordInfo]()
     var storeTranslation = [StoreTranslation]()
     
-    @IBOutlet weak var choosePhrasesButton: UIButton!
-    @IBOutlet weak var chooseSocialTopicsButton: UIButton!
-    
+    var myString = "Everyday phrases with \(currentWord)!"
+    var myMutableString = NSMutableAttributedString()
     
     // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set border for choosePhrasesButton, specifies layout styles.
-        choosePhrasesButton.layer.borderWidth = 1
-        choosePhrasesButton.layer.borderColor = UIColor.white.cgColor
-        choosePhrasesButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-
-        // Set border for chooseSocialTopicsButton, specifies layout styles.
-        chooseSocialTopicsButton.layer.borderWidth = 1
-        chooseSocialTopicsButton.layer.borderColor = UIColor.white.cgColor
-        chooseSocialTopicsButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
- 
-        // Fetch data for Word Translation
-        ContextController.shared.fetchWordTranslation( completion: { (wordTranslation) in
-            if let wordTranslation = wordTranslation {
-                print(wordTranslation)
-                //self.wordTranslation = self.wordTranslation + wordTranslation
-                //print(wordTranslation)
-                //print("--------------------------------------------------------")
-            }
-        })
+        // set Labels to relevent word info
+       generalDiscriptionLabel.text = "\(currentWord.uppercased()): \(currentDiscription)"
+       phrasesDiscriptionLabel.text = "Everyday phrases with \(currentWord.uppercased())"
+       socialDiscriptionLabel.text = "Social Topics with \(currentWord.uppercased())"
+    
+//        // Fetch data for Word Translation
+//        ContextController.shared.fetchWordTranslation( completion: { (wordTranslation) in
+//            if let wordTranslation = wordTranslation {
+//                print(wordTranslation)
+//                //self.wordTranslation = self.wordTranslation + wordTranslation
+//                //print(wordTranslation)
+//                //print("--------------------------------------------------------")
+//            }
+//        })
         
         //        // Fetch data for Word Info
         //        ContextController.shared.fetchWordInfo( completion: { (storeWordInfo) in

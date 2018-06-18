@@ -9,18 +9,22 @@
 import Foundation
 import UIKit
 
-// Struct SocialContext
-struct StoreSocialContext: Codable {
-    let title: String
-    let url: URL
-    let thumbnail_url: URL
-    let thumbnail_width: Int
-    let thumbnail_height: Int
-}
+// Set variabel for currentWord.
+var currentWord: String = ""
+
+// Set Variabel for currentWord
+var currentDiscription: String = ""
+
+// Set variabel for randomWordIndex.
+var randomWordIndex = 0
 
 // Struct RandomWords
 struct StoreRandomWords: Codable {
+    let metadata1: Metadata1
     let results: [Result]
+}
+
+struct Metadata1: Codable {
 }
 
 struct Result: Codable {
@@ -189,6 +193,15 @@ struct SubsenseTranslation: Codable {
 
 enum Language: String, Codable {
     case es = "es"
+}
+
+// Struct SocialContext
+struct StoreSocialContext: Codable {
+    let title: String
+    let url: URL
+    let thumbnail_url: URL
+    let thumbnail_width: Int
+    let thumbnail_height: Int
 }
 
 

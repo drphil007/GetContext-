@@ -5,7 +5,7 @@ An app that allows the user to get semantic and cultural context of a word in an
 The goal of this app is to give the user a quick overview of the semantic and cultural usages of a word in different languages to emphasize it's differences. This will help to prevent misunderstanding in communication and translation and hopes to advance understanding and learning of different language and apricate it's differences. The uses of this can be for learning a language, a situation in which knowledge of contextual differences of a word are needed: communication between two different language users (e.g. travellers or for business purposes) or simply curiosity. 
 
 ## Visual Sketch 
-![Visual interaction of controllers, displaying the app's MVP: entering a word and loading it's word usage and social usage](doc/image.png)
+![Visual interaction of controllers, displaying the app's MVP: entering a word and loading it's word usage and social usage](doc/MPV.png)
 
 ## Main Features 
 * The start screen will allow the user to enter his name trough Firebase Database, see the word of the day and input a word. 

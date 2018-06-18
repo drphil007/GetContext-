@@ -35,7 +35,10 @@ UML Sketch
 * Tweaked some layout: thinking about the setup, not statisied with front-end. 
 * Feeling my app idea has a very specific target audience unlike others; which is not ideal, learning point. 
 
-# day 6 
+# day 6
+* Ill, not able to do anything. 
+
+# day 7
 * Ill and only doing front-end today.
 * Found app logo site and used it to make (hopefully) final design!  
 ![AppLogo](doc/GetContext_Logo.png)
@@ -46,7 +49,7 @@ UML Sketch
 * Statisfied about logo and coloring; not statisfied with coloring for table views, table view background is different than
   view controllers. Thinking about that. 
 
-# day 7
+# day 8
 * Recovering from illness.
 * Removed Monsterrattt font and reference due to new layout. 
 * Allow arbitrary connection in info.plist > HTTP request not working due to weak/unsafe connection?
@@ -55,7 +58,7 @@ UML Sketch
 * Remember to make/explore a borderline under textField. 
 
 
-# day 8 
+# day 9
 * Found new API for generating new words&translation (Word Context) in one & other cool features! Old API doesn't seem to be working.
 * HTTP request is safe and seems to work just fine for this API. 
 * New API from: https://developer.oxforddictionaries.com/ set up account.
@@ -65,5 +68,19 @@ UML Sketch
 * Thinking about implementing a Tab Controller for Word Context because new API has more 
 features and options to explore.
 * Add navigation bar tomorrow.
+
+# day 10
+* Weekly presentation. 
+* Feedback on social topics: may try to use Google Api, will however mean to involve 3 diff
+api voor image/articles/video's instead of 1 api. Considering. 
+
+# day 11
+* Decided to add tab controler for enter word/daily word/ my words. Statisfied with better user interface.
+* Decided to add tab controler for contexts: content, general overview of word, phrases in different languages and social topics. 
+* Fill in username & alert when not.
+* Fill in word & alert when not. 
+* Tried to Load in daily word and description, error with loading in structures. 
+
+
 
 

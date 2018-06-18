@@ -15,14 +15,7 @@ class SocialContextTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        ContextController.shared.fetchSocialContext { (storeSocialContext) in
-//            if let storeSocialContext = storeSocialContext {
-//                print(storeSocialContext)
-//                //self.storeSocialContext = self.storeSocialContext + storeSocialContext
-//                //print(storeSocialContext)
-//            }
-//            print("------------------------------------")
-//        }
+        // FetchSocialContext
     }
 
     override func didReceiveMemoryWarning() {

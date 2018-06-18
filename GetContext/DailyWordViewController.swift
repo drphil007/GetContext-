@@ -17,6 +17,10 @@ class DailyWordViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var getContextButton: UIButton!
     
+    @IBAction func getContextButtonPressed(_ sender: Any) {
+        // Go to Context View
+         self.performSegue(withIdentifier: "getContext", sender: self)
+    }
     
      // Do any additional setup after loading the view.
     override func viewDidLoad() {
@@ -26,28 +30,30 @@ class DailyWordViewController: UIViewController {
         getContextButton.layer.borderWidth = 1
         getContextButton.layer.borderColor = UIColor.white.cgColor
         getContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-
-        // Fetch data for Daily Word.
-        ContextController.shared.fetchRandomWord( completion: { (storeRandomWord) in
-            if let storeRandomWord = storeRandomWord {
-                print(storeRandomWord)
-                //self.storeRandomWord = self.storeRandomWord + storeRandomWord
-                //self.updateUI(with: self.storeRandomWord)
-                //print(storeRandomWord)
-                //print("--------------------------------------------------------")
-            }
-        })
         
-        // Fetch data for Description.
-        ContextController.shared.fetchWordDescription(completion: { (storeWordDescription) in
-            if let storeWordDescription = storeWordDescription {
-                print(storeWordDescription)
-                // self.storeWordDescription = self.storeWordDescription + storeWordDescription
-                // self.updateUI(with: self.storeWordDescription)
-                // print(storeWordDescription)
-                //print("--------------------------------------------------------")
-            }
-        })
+//        // Fetch data for Daily Word.
+//        ContextController.shared.fetchRandomWord( completion: { (storeRandomWord) in
+//            if let storeRandomWord = storeRandomWord {
+//                print(storeRandomWord)
+////                self.storeRandomWord = self.storeRandomWord + storeRandomWord
+////                self.updateUI(with: self.storeRandomWord)
+//                print(storeRandomWord)
+//                print("--------------------------------------------------------")
+//            }
+//        })
+//
+//        // Fetch data for Description.
+//        ContextController.shared.fetchWordDescription(completion: { (storeWordDescription) in
+//            print(storeWordDescription)
+//            if let storeWordDescription = storeWordDescription {
+//                print(storeWordDescription.metadata)
+////                 self.storeWordDescription = String(self.storeWordDescription) + String(storeWordDescription)
+////                 self.updateUI(with: self.storeWordDescription)
+//                 //print(storeWordDescriptionA)
+//                print("--------------------------------------------------------")
+//            }
+//        })
+//    }
     }
 
     // Update the user interface with storeRandomWord from api.
@@ -57,10 +63,7 @@ class DailyWordViewController: UIViewController {
             //self.showWordDescription(with: storeWordDescription)
         }
     }
-    
-    //If Word of the day button pressed showRandomWord & showWordDescription
-    
-    
+
     func showRandomWord(with storeRandomWord: [StoreRandomWords]) {
         // if
     }
