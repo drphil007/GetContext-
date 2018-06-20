@@ -18,6 +18,8 @@
 		15CE735D20CFDFBE00720FD8 /* SocialContextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */; };
 		15CE735F20CFE47800720FD8 /* ContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735E20CFE47800720FD8 /* ContextController.swift */; };
 		15CE736320D1A52300720FD8 /* DailyWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE736220D1A52300720FD8 /* DailyWordViewController.swift */; };
+		15CE736820D90FF500720FD8 /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE736720D90FF500720FD8 /* GeneralTableViewController.swift */; };
+		15CE737020D920CB00720FD8 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE736F20D920CB00720FD8 /* LanguagesTableViewController.swift */; };
 		15D0C86020C5D8D60024DBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C85F20C5D8D60024DBA1 /* AppDelegate.swift */; };
 		15D0C86220C5D8D60024DBA1 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C86120C5D8D60024DBA1 /* IntroductionViewController.swift */; };
 		15D0C86520C5D8D60024DBA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D0C86320C5D8D60024DBA1 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		15CE736420D8319500720FD8 /* PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROCESS.md; sourceTree = "<group>"; };
 		15CE736520D8319500720FD8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		15CE736620D8319800720FD8 /* DESIGN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
+		15CE736720D90FF500720FD8 /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
+		15CE736F20D920CB00720FD8 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		15D0C85C20C5D8D60024DBA1 /* GetContext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetContext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D0C85F20C5D8D60024DBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D0C86120C5D8D60024DBA1 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				15CE735E20CFE47800720FD8 /* ContextController.swift */,
 				15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */,
 				15D0C86320C5D8D60024DBA1 /* Main.storyboard */,
+				15CE736720D90FF500720FD8 /* GeneralTableViewController.swift */,
+				15CE736F20D920CB00720FD8 /* LanguagesTableViewController.swift */,
 				15CE735420CFCB2400720FD8 /* MyWordsData.swift */,
 				15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */,
 				15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */,
@@ -366,6 +372,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CE736820D90FF500720FD8 /* GeneralTableViewController.swift in Sources */,
+				15CE737020D920CB00720FD8 /* LanguagesTableViewController.swift in Sources */,
 				15CE735720CFCB6100720FD8 /* MyWordsTableViewController.swift in Sources */,
 				15D0C86220C5D8D60024DBA1 /* IntroductionViewController.swift in Sources */,
 				15D0C86020C5D8D60024DBA1 /* AppDelegate.swift in Sources */,

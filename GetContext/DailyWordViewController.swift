@@ -10,6 +10,8 @@ import UIKit
 
 class DailyWordViewController: UIViewController {
 
+    var randomWord: String = ""
+    var wordDescription: String = ""
     var storeRandomWord = [StoreRandomWords]()
     var storeWordDescription = [StoreWordDescription]()
   
@@ -18,6 +20,8 @@ class DailyWordViewController: UIViewController {
     @IBOutlet weak var getContextButton: UIButton!
     
     @IBAction func getContextButtonPressed(_ sender: Any) {
+        // Sent randomWord to ChooseContext as currentWord
+        currentWord = self.randomWord
         // Go to Context View
          self.performSegue(withIdentifier: "getContext", sender: self)
     }
@@ -30,46 +34,63 @@ class DailyWordViewController: UIViewController {
         getContextButton.layer.borderWidth = 1
         getContextButton.layer.borderColor = UIColor.white.cgColor
         getContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+
+        // Fetch data for Daily Word.
+        ContextController.shared.fetchRandomWord { (storeRandomWord) in
+            if let storeRandomWord = storeRandomWord {
+                self.randomWord = (storeRandomWord.results.first?.word)!
+                print(self.randomWord)
+                self.updateUI(with: self.storeRandomWord)
+            }
+        }
         
-//        // Fetch data for Daily Word.
-//        ContextController.shared.fetchRandomWord( completion: { (storeRandomWord) in
-//            if let storeRandomWord = storeRandomWord {
-//                print(storeRandomWord)
-////                self.storeRandomWord = self.storeRandomWord + storeRandomWord
-////                self.updateUI(with: self.storeRandomWord)
-//                print(storeRandomWord)
-//                print("--------------------------------------------------------")
-//            }
-//        })
-//
-//        // Fetch data for Description.
-//        ContextController.shared.fetchWordDescription(completion: { (storeWordDescription) in
-//            print(storeWordDescription)
-//            if let storeWordDescription = storeWordDescription {
-//                print(storeWordDescription.metadata)
-////                 self.storeWordDescription = String(self.storeWordDescription) + String(storeWordDescription)
-////                 self.updateUI(with: self.storeWordDescription)
-//                 //print(storeWordDescriptionA)
-//                print("--------------------------------------------------------")
-//            }
-//        })
-//    }
+        // Fetch data for Description.
+        ContextController.shared.fetchWordDescription { (storeWordDescription) in
+            if let storeWordDescription = storeWordDescription {
+                print("\n\n\n")
+                // Long Definition
+                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.definitions as Any)
+             
+                // Short definition
+                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.shortDefinitions as Any)
+                
+                // sub definitions
+                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses?.first?.definitions as Any)
+               
+                // Etymologies
+                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.etymologies as Any)
+                
+                //self.wordDescription = (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.etymologies) as Any as! String
+                //print(self.wordDescription)
+                
+                self.updateUI(with: self.storeWordDescription)
+            }
+        }
+
     }
 
-    // Update the user interface with storeRandomWord from api.
     func updateUI(with storeRandomWord: [StoreRandomWords]) {
         DispatchQueue.main.async {
-            //self.showRandomWord(with: storeRandomWords)
-            //self.showWordDescription(with: storeWordDescription)
+            self.showRandomWord(with: storeRandomWord)
         }
     }
-
-    func showRandomWord(with storeRandomWord: [StoreRandomWords]) {
-        // if
+    
+    
+    // Update the user interface with storeRandomWord from api.
+    func updateUI(with storeWordDescription: [StoreWordDescription]) {
+        DispatchQueue.main.async {
+            //self.showRandomWord(with: storeRandomWord)
+            self.showWordDescription(with: storeWordDescription)
+        }
     }
     
-    func showWordDescription(with storeWordDescription: [StoreWordDescription]) {
-        // if
+    func showRandomWord (with storeRandomWords: [StoreRandomWords]) {
+        dailyWordLabel.text = self.randomWord
+    }
+    
+    func showWordDescription (with storeWordDescription: [StoreWordDescription]) {
+        descriptionLabel.text = self.wordDescription
+        
     }
     
     override func didReceiveMemoryWarning() {

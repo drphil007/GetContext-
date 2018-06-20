@@ -25,12 +25,12 @@ class ChooseContextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set Labels to relevent word info
+       // set Labels to relevent word info
        generalDiscriptionLabel.text = "\(currentWord.uppercased()): \(currentDiscription)"
        phrasesDiscriptionLabel.text = "Everyday phrases with \(currentWord.uppercased())"
        socialDiscriptionLabel.text = "Social Topics with \(currentWord.uppercased())"
     
-//        // Fetch data for Word Translation
+       //  Fetch data for Word Translation
 //        ContextController.shared.fetchWordTranslation( completion: { (wordTranslation) in
 //            if let wordTranslation = wordTranslation {
 //                print(wordTranslation)
@@ -55,16 +55,4 @@ class ChooseContextViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

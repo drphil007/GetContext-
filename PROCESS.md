@@ -80,6 +80,21 @@ api voor image/articles/video's instead of 1 api. Considering.
 * Fill in username & alert when not.
 * Fill in word & alert when not. 
 * Tried to Load in daily word and description, error with loading in structures. 
+* Remember to clean Git. Remember to optionally add border with TextField. 
+* Planning next comming days 1. Load in daily words, General context & content. 2. Phrases. 3.Social Context 4. FireBase & Layout.
+
+# day 12
+* Thinking about neccesity Firebase, lot of work and maybe not a must. Optional, thinking about it. 
+* Organized Git, still not done. Remember to make sure to look up how to remove files. 
+* Fixed almost all errors; loading in daily word and re-ordering the setup for the code in tableviews depended on
+the json fix. Day with lots of errors/questions/frustrations.
+* Also worked on interaction frond/back-end. 
+
+# day 13
+* Finished loading in daily word and general context. Almost done with Phrases. Lots of progress.
+* Planning on finishing Phrases tomorrow morning + Social Context. 
+* Still not sure about Firebase but maybe planning setup for fridaymorning. 
+* currently focussing on makins sure all functions works; make notes of little tweaks in design for future.
 
 
 

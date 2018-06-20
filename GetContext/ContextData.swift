@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// Set variabel for randomWord.
+var randomWord: String = ""
+
 // Set variabel for currentWord.
 var currentWord: String = ""
 
@@ -20,28 +23,19 @@ var randomWordIndex = 0
 
 // Struct RandomWords
 struct StoreRandomWords: Codable {
-    let metadata1: Metadata1
-    let results: [Result]
+    let results: [RandomResult]
 }
 
-struct Metadata1: Codable {
-}
-
-struct Result: Codable {
+struct RandomResult: Codable {
     let word: String
 }
 
 // Struct Description of word, word-info.
 struct StoreWordDescription: Codable {
-    let metadata: Metadata
-    let resultsInfo: [Result]
+    let results: [Result]
 }
 
-struct Metadata: Codable {
-    let provider: String
-}
-
-struct ResultInfo: Codable {
+struct Result: Codable {
     let id, language: String
     let lexicalEntries: [LexicalEntry]
     let type, word: String
@@ -89,7 +83,7 @@ struct SenseExample: Codable {
 }
 
 struct Subsense: Codable {
-    let definitions: [String]
+    let definitions: [String]?
     let domains: [String]?
     let examples: [SubsenseExample]
     let id: String
@@ -118,36 +112,29 @@ struct ThesaurusLink: Codable {
 }
 
 struct Pronunciation: Codable {
-    let audioFile: String
-    let dialects: [String]
     let phoneticNotation, phoneticSpelling: String
 }
 
 // Store Translations
 struct StoreTranslation: Codable {
-    let metadataTrans: MetadataTrans
-    let resultsTrans: [ResultTrans]
+    let results: [TranslationResult]
 }
 
-struct MetadataTrans: Codable {
-    let provider: String
-}
-
-struct ResultTrans: Codable {
+struct TranslationResult: Codable {
     let id, language: String
     let lexicalEntries: [LexicalEntryTrans]
     let type, word: String
 }
 
 struct LexicalEntryTrans: Codable {
-    let entriesTrans: [EntryTrans]
+    let entries: [EntryTrans]
     let language, lexicalCategory, text: String
 }
 
 struct EntryTrans: Codable {
-    let grammaticalFeaturesTrans: [GrammaticalFeatureTrans]
+    let grammaticalFeatures: [GrammaticalFeatureTrans]
     let homographNumber: String
-    let sensesTrans: [SenseTrans]
+    let senses: [SenseTrans]
 }
 
 struct GrammaticalFeatureTrans: Codable {
@@ -156,9 +143,9 @@ struct GrammaticalFeatureTrans: Codable {
 
 struct SenseTrans: Codable {
     let id: String
-    let subsensesTrans: [SubsenseTrans]?
-    let notesTrans: [GrammaticalFeatureTrans]?
-    let examplesTrans: [SenseExampleTrans]?
+    let subsenses: [SubsenseTrans]?
+    let notes: [GrammaticalFeature]?
+    let examples: [SenseExampleTrans]?
     let translations: [SenseTranslation]?
     let domains: [String]?
 }
@@ -173,7 +160,7 @@ struct SenseTranslation: Codable {
 }
 
 struct SubsenseTrans: Codable {
-    let examplesTrans: [SubsenseExample]?
+    let examples: [SubsenseExampleTrans]?
     let id: String
     let notes: [GrammaticalFeature]?
     let translations: [SubsenseTranslation]
