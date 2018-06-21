@@ -13,8 +13,9 @@ class LanguagesTableViewController: UITableViewController {
     var wordTranslation: String = ""
     var wordTranslated: String = ""
     var storeTranslation = [StoreTranslation]()
-    let languagesTitle = ["English", "Spanish","Pedi; Northen Sotho; Africa","Zulu; South Africa","Malay","Indonesion","Tswana; South Africa","Urdu; Pakistan","German"]
+    var languagesTitle = ["English", "Spanish","Pedi; Northen Sotho; Africa","Zulu; South Africa","Malay","Indonesion","Tswana; South Africa","Urdu; Pakistan","German"]
     let languagesCodes = ["en","es","nso","zu","ms","id","tn","ur","de"]
+    var allTransPairs : [String] = []
 
     var textToBeSent: String = ""
     
@@ -24,24 +25,55 @@ class LanguagesTableViewController: UITableViewController {
         // Fetch data for Description.
         ContextController.shared.fetchWordTranslation { (storeTranslation) in
             if let storeTranslation = storeTranslation{
-                //
+                
+                // code for "if nil"
+                
+                // Translation English
                 self.wordTranslation = (storeTranslation.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
                 print(self.wordTranslation)
                 
-                //
+                // Translation Other language (Spanish)
+//                currentTargetLanguage = "es"
                 self.wordTranslated = (storeTranslation.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
                 print(self.wordTranslated)
                 
                 self.updateUI(with: self.storeTranslation)
             }
         }
+            
+        // Fetch data for Translation.
+//        ContextController.shared.fetchWordTranslation { (storeTranslation) in
+//            if let storeTranslation = storeTranslation{
+//
+//                // code for "if nil"
+//
+//                // Translation English
+//                self.wordTranslation = (storeTranslation.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+//                print(self.wordTranslation)
+//
+//                // Translation Other language (Pedi)
+//                currentTargetLanguage = "nso"
+//                self.wordTranslated = (storeTranslation.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+//                print(self.wordTranslated)
+//
+//                self.updateUI(with: self.storeTranslation)
+//            }
+//        }
     }
     
     func updateUI(with storeTranslation: [StoreTranslation]) {
         DispatchQueue.main.async {
-            //
-            self.tableView.reloadData()
+            self.allTransPairs = ["\(self.wordTranslation)","\(self.wordTranslated)","test","","","","","","test"]
+            
+            
+            //self.tableView.reloadData()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//       currentTargetLanguage = "es"
+       languagesTitle = self.allTransPairs
+       self.tableView.reloadData()
     }
     
     // Dispose of any resources that can be recreated.

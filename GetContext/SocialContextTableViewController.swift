@@ -10,84 +10,85 @@ import UIKit
 
 class SocialContextTableViewController: UITableViewController {
 
-    //var storeSocialContext = [StoreSocialContext]()
+    var storeSocialContext = [StoreSocialContext]()
+    var socialTry: String = ""
+    
+    var socialArray: [String] = []
+    // var thumbNail
+    // var imageSocial
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // FetchSocialContext
+        ContextController.shared.fetchSocialContext { (storeSocialContext) in
+            if let storeSocialContext = storeSocialContext {
+                print("\n\n\n")
+                
+                
+//                self.socialTry = (storeSocialContext.items?.first?.metatags?.first?.title)!
+//                print(self.socialTry)
+                
+                // load web views + thumnails
+                // if first is nil
+                    // else do next
+                    // else if still nill
+                        // print "No current sources"
+                
+                // load images
+                // set defaul in case of nill
+                
+                self.updateUI(with: self.storeSocialContext)
+            }
+        }
+        
+//        self.socialArray = ["\(self.socialTry)"]
+        
     }
+    
 
+    func updateUI(with storeSocialContext: [StoreSocialContext]) {
+        DispatchQueue.main.async {
+                        self.tableView.reloadData()
+        }
+    }
+    
+    // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-
-    // MARK: - Table view data source
-
+    
+    // Return the number of sections.
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
+    // Set amount of rows to objects in list.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return socialArray.count
+//        return 1
     }
-
-    /*
+    
+    // Set content for cells.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "socialCell", for: indexPath)
+        configure(cell: cell, forItemAt: indexPath)
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+        // Set text for Title and Detail.
+        
+        cell.textLabel?.text = socialArray[indexPath.row]
+        //cell.detailTextLabel?.text = [indexPath.row]
+        // thumbnail
+        
+        //cell.imageView!.image = imageSocial[IndexPath.row]
+        
+        // Set text font.
+        cell.textLabel?.font = UIFont (name: "Heavy System", size: 40)
+        cell.detailTextLabel?.font = UIFont (name: "Heavy System", size: 20)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

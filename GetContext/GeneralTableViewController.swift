@@ -14,9 +14,12 @@ class GeneralTableViewController: UITableViewController {
     var examplePhrase: String = ""
     var subExamplePhrase: String = ""
     var grammaticalFeature: String = ""
+    var etymologies: String = ""
     var lexicalCategory: String = ""
     var phoneticSpelling: String = ""
 
+    var etymolFinal: String = ""
+    
     let generalTitle = ["Word","Definitions","Example Phrase","Grammatical Features","Etymologies","Lexical Category","Phonetic Spelling"]
     
     var detail: [String] = []
@@ -42,7 +45,12 @@ class GeneralTableViewController: UITableViewController {
                 print(self.grammaticalFeature)
   
                 // Etymologies
-                
+                for etymologies in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.etymologies)! {
+                    self.etymolFinal = etymologies
+                    //print(self.etymolFinal)
+                }
+                print(self.etymolFinal)
+      
                 // Lexical Category
                 self.lexicalCategory = (storeWordDescription.results.first?.lexicalEntries.first?.lexicalCategory)!
                 print(self.lexicalCategory)
@@ -59,7 +67,7 @@ class GeneralTableViewController: UITableViewController {
     
     func updateUI(with storeWordDescription: [StoreWordDescription]) {
         DispatchQueue.main.async {
-            self.detail = ["test","\(self.examplePhrase)","\(self.subExamplePhrase)","\(self.grammaticalFeature)","test","\(self.lexicalCategory)","\(self.phoneticSpelling)"]
+            self.detail = ["test","\(self.examplePhrase)","\(self.subExamplePhrase)","\(self.grammaticalFeature)","\(self.etymolFinal)","\(self.lexicalCategory)","\(self.phoneticSpelling)"]
             self.tableView.reloadData()
         }
     }

@@ -10,17 +10,34 @@ import UIKit
 
 class EnterWordViewController: UIViewController {
  
+    var shortDefinition: String = ""
+    var shortFinal: String = ""
+    var storeWordDescription = [StoreWordDescription]()
     
     @IBOutlet weak var wordField: UITextField!
     @IBOutlet weak var getContextButton: UIButton!
     
-    
     @IBAction func wordFieldChanged(_ sender: UITextField) {
         // Set text to entered word
         currentWord = wordField.text!
+//        setDescription()
+    }
     
-        //print(currentWord)
-        // keep currentWord and send to Context
+    @IBAction func getContextPressed(_ sender: Any) {
+        // make sure user enters word
+        if currentWord.isEmpty {
+            createAlert(title: "Word Missing", message: "Enter a Word to continue")
+        }
+        else {
+            print(currentWord)
+            // Description not yet in right place called, doesn't go trough 
+            setDescription()
+//            print(currentDescription)
+            // Go to Context View
+            self.performSegue(withIdentifier: "getWord", sender: self)
+        }
+        print(currentWord)
+        print("hey",currentDescription)
     }
     
     // Do any additional setup after loading the view.
@@ -33,16 +50,19 @@ class EnterWordViewController: UIViewController {
         getContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
     }
     
-    @IBAction func getContextPressed(_ sender: Any) {
-        // make sure user enters word
-        if currentWord.isEmpty {
-            createAlert(title: "Word Missing", message: "Enter a Word to continue")
+    func setDescription() {
+        // Fetch data for Description.
+        ContextController.shared.fetchWordDescription { (storeWordDescription) in
+            if let storeWordDescription = storeWordDescription {
+                // Short definition
+                for shortDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.shortDefinitions)! {
+                    self.shortFinal = shortDefinition
+                }
+                print(self.shortFinal)
+            }
         }
-        else {
-            print(currentWord)
-            // Go to Context View
-            self.performSegue(withIdentifier: "getContext", sender: self)
-        }
+        
+        currentDescription = self.shortFinal
     }
     
     // Function to create Alert message.
@@ -65,7 +85,7 @@ class EnterWordViewController: UIViewController {
             // print name when entered
             if let currentWord = alert.textFields?.first?.text {
                 print("Word: \(currentWord)")
-                self.performSegue(withIdentifier: "getContext", sender: self)
+                self.performSegue(withIdentifier: "getWord", sender: self)
             }
         }))
         // show alert

@@ -13,6 +13,13 @@ class DailyWordViewController: UIViewController {
     var randomWord: String = ""
     var wordDescription: String = ""
     var storeRandomWord = [StoreRandomWords]()
+    
+    var longDefinition: String = ""
+    var longFinal: String = ""
+    var shortDefinition: String = ""
+    var shortFinal: String = ""
+    var subDefinition: String = ""
+    var subFinal: String = ""
     var storeWordDescription = [StoreWordDescription]()
   
     @IBOutlet weak var dailyWordLabel: UILabel!
@@ -22,6 +29,7 @@ class DailyWordViewController: UIViewController {
     @IBAction func getContextButtonPressed(_ sender: Any) {
         // Sent randomWord to ChooseContext as currentWord
         currentWord = self.randomWord
+        currentDescription = self.shortFinal
         // Go to Context View
          self.performSegue(withIdentifier: "getContext", sender: self)
     }
@@ -47,21 +55,23 @@ class DailyWordViewController: UIViewController {
         // Fetch data for Description.
         ContextController.shared.fetchWordDescription { (storeWordDescription) in
             if let storeWordDescription = storeWordDescription {
-                print("\n\n\n")
                 // Long Definition
-                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.definitions as Any)
-             
+                for longDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.definitions)! {
+                    self.longFinal = longDefinition
+                }
+                print(self.longFinal)
+                
                 // Short definition
-                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.shortDefinitions as Any)
+                for shortDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.shortDefinitions)! {
+                    self.shortFinal = shortDefinition
+                }
+                print(self.shortFinal)
                 
-                // sub definitions
-                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses?.first?.definitions as Any)
-               
-                // Etymologies
-                print(storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.etymologies as Any)
-                
-                //self.wordDescription = (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.etymologies) as Any as! String
-                //print(self.wordDescription)
+                // Sub definitions
+                for subDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses?.first?.definitions)! {
+                    self.subFinal = subDefinition
+                }
+                print(self.subFinal)
                 
                 self.updateUI(with: self.storeWordDescription)
             }
@@ -79,7 +89,6 @@ class DailyWordViewController: UIViewController {
     // Update the user interface with storeRandomWord from api.
     func updateUI(with storeWordDescription: [StoreWordDescription]) {
         DispatchQueue.main.async {
-            //self.showRandomWord(with: storeRandomWord)
             self.showWordDescription(with: storeWordDescription)
         }
     }
@@ -89,8 +98,7 @@ class DailyWordViewController: UIViewController {
     }
     
     func showWordDescription (with storeWordDescription: [StoreWordDescription]) {
-        descriptionLabel.text = self.wordDescription
-        
+        descriptionLabel.text = self.longFinal
     }
     
     override func didReceiveMemoryWarning() {

@@ -15,11 +15,13 @@ var randomWord: String = ""
 // Set variabel for currentWord.
 var currentWord: String = ""
 
-// Set Variabel for currentWord
-var currentDiscription: String = ""
+// Set variabel for currentDescription
+var currentDescription: String = ""
 
 // Set variabel for randomWordIndex.
 var randomWordIndex = 0
+
+var currentTargetLanguage: String = ""
 
 // Struct RandomWords
 struct StoreRandomWords: Codable {
@@ -182,13 +184,44 @@ enum Language: String, Codable {
     case es = "es"
 }
 
-// Struct SocialContext
-struct StoreSocialContext: Codable {
-    let title: String
-    let url: URL
-    let thumbnail_url: URL
-    let thumbnail_width: Int
-    let thumbnail_height: Int
+// Struct SocialContext: https://stackoverflow.com/questions/49358645/decoding-google-custom-search-api-in-swift-4-using-decodable-protocol
+struct StoreSocialContext: Decodable
+{
+    var items: [Item]?
 }
 
+struct Item: Decodable
+{
+    var metatags: [enclosedTags]?
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case pagemap
+    }
+    
+    enum PageMapKeys: String, CodingKey
+    {
+        case metatags
+    }
+    
+    init(from decoder: Decoder) throws
+    {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let pagemap = try values.nestedContainer(keyedBy: PageMapKeys.self, forKey: .pagemap)
+        metatags = try pagemap.decode([enclosedTags].self, forKey: .metatags)
+    }
+}
+
+struct enclosedTags: Decodable
+{
+    let image: String?
+    let title: String?
+    let description: String?
+    let siteName: String?
+    
+//    private enum CodingKeys : String, CodingKey
+//    {
+//        case image = "og:image", title = "og:title", description = "og:description", siteName = "og:site_name"
+//    }
+}
 
