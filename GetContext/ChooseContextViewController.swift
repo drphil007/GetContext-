@@ -18,9 +18,12 @@ class ChooseContextViewController: UIViewController {
     @IBOutlet weak var phrasesDiscriptionLabel: UILabel!
     @IBOutlet weak var socialDiscriptionLabel: UILabel!
     
-    var gereneralString =  "\(currentWord.uppercased()): \(currentDescription)"
-    var phraseString = "Everyday phrases with \(currentWord.uppercased())"
-    var socialString = "Social Topics with \(currentWord.uppercased())"
+    //var gereneralString =  "\(currentWord.uppercased()): \(currentDescription)"
+    var gereneralString = "BEST: \(currentDescription)"
+    //var phraseString = "Everyday phrases with \(currentWord.uppercased())"
+    var phraseString = "Everyday phrases with BEST"
+    //var socialString = "Social Topics with \(currentWord.uppercased())"
+    var socialString = "Social Topics with BEST"
     
     // Do any additional setup after loading the view.
     override func viewDidLoad() {

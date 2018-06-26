@@ -170,7 +170,7 @@ class ContextController {
         let apiKey = "AIzaSyA9yV1lOOWbUv0RLNZ_M_XVuNXmTsU1x0I"
         let bundleID = "com.mprog.GetContext"
         let searchKey = "006207088670286226506:ci6ag3ipfoi"
-        let query = "Trump"
+        let query = "Best"
         let serverAddress = String(format: "https://www.googleapis.com/customsearch/v1?q=\(query)&key=\(apiKey)&cx=\(searchKey)")
         
         let url = serverAddress.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

@@ -96,6 +96,19 @@ the json fix. Day with lots of errors/questions/frustrations.
 * Still not sure about Firebase but maybe planning setup for fridaymorning. 
 * currently focussing on makins sure all functions works; make notes of little tweaks in design for future.
 
+# day 14
+* Social context and phrases almost done. 
+* Discussed firebase at presentation: considering using firebase only for words. 
+* Tips about layout. Will implement those. 
+
+# day 15
+* Migraine, trip to the doctor. 
+
+
+# day 16
+* Set tab bar icons from http://www.iconbeast.com/free/
+
+
 
 
 

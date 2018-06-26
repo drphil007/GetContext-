@@ -15,7 +15,14 @@ class LanguagesTableViewController: UITableViewController {
     var storeTranslation = [StoreTranslation]()
     var languagesTitle = ["English", "Spanish","Pedi; Northen Sotho; Africa","Zulu; South Africa","Malay","Indonesion","Tswana; South Africa","Urdu; Pakistan","German"]
     let languagesCodes = ["en","es","nso","zu","ms","id","tn","ur","de"]
-    var allTransPairs : [String] = []
+//    var allTransPairs : [String] = []
+    var allTransPairs = ["","she gave her best ever performance \n actuó mejor que nunca",
+    "Who is your best friend? \n Mogwera wa gago yo kaonekaone ke mang?",
+    "Who is your best friend? \n Ubani umngane wakho obadlula bonke?",
+    "paling baik",
+    "that's the best film \n itu film yang paling baik, itu film yang terbaik",
+    "of the most excellent kind \n mo go gaisang","nil","be best of all \n am allerbesten sein"]
+    var cellOn: Bool = true
 
     var textToBeSent: String = ""
     
@@ -37,7 +44,7 @@ class LanguagesTableViewController: UITableViewController {
                 self.wordTranslated = (storeTranslation.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
                 print(self.wordTranslated)
                 
-                self.updateUI(with: self.storeTranslation)
+             //   self.updateUI(with: self.storeTranslation)
             }
         }
             
@@ -63,18 +70,41 @@ class LanguagesTableViewController: UITableViewController {
     
     func updateUI(with storeTranslation: [StoreTranslation]) {
         DispatchQueue.main.async {
-            self.allTransPairs = ["\(self.wordTranslation)","\(self.wordTranslated)","test","","","","","","test"]
-            
-            
+            //self.allTransPairs = ["\(self.wordTranslation)","\(self.wordTranslated)","test","","","","","","test"]
+        
             //self.tableView.reloadData()
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //       currentTargetLanguage = "es"
-       languagesTitle = self.allTransPairs
-       self.tableView.reloadData()
+//      let cell = tableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath)
+//      //cell.textLabel?.text = allTransPairs[indexPath.row]
+//      cell.textLabel?.text = "test"
+//       languagesTitle = self.allTransPairs
+       //self.tableView.reloadData()
+        
+        // Used source for info:https://stackoverflow.com/questions/26158768/how-to-get-textlabel-of-selected-row-in-swift
+        let indexPath = tableView.indexPathForSelectedRow
+
+        let currentCell = tableView.cellForRow(at: indexPath!) as UITableViewCell?
+
+        // cellOn.currentCell
+        
+        // Set cell text. Bool now works for every cell: set bool to one row.
+        if cellOn == true {
+            currentCell?.textLabel?.text = allTransPairs[(indexPath?.row)!]
+            cellOn = false
+            print("on")
+        } else if cellOn == false {
+            currentCell?.textLabel?.text = languagesTitle[(indexPath?.row)!]
+            print("off")
+            cellOn = true
+        }
+        
+        tableView.deselectRow(at: indexPath!, animated: true)
     }
+    
     
     // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {

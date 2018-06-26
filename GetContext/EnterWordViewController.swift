@@ -38,6 +38,7 @@ class EnterWordViewController: UIViewController {
         }
         print(currentWord)
         print("hey",currentDescription)
+        print("\n")
     }
     
     // Do any additional setup after loading the view.

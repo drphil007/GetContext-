@@ -28,7 +28,7 @@ class DailyWordViewController: UIViewController {
     
     @IBAction func getContextButtonPressed(_ sender: Any) {
         // Sent randomWord to ChooseContext as currentWord
-        currentWord = self.randomWord
+        //currentWord = self.randomWord
         currentDescription = self.shortFinal
         // Go to Context View
          self.performSegue(withIdentifier: "getContext", sender: self)
@@ -89,12 +89,13 @@ class DailyWordViewController: UIViewController {
     // Update the user interface with storeRandomWord from api.
     func updateUI(with storeWordDescription: [StoreWordDescription]) {
         DispatchQueue.main.async {
-            self.showWordDescription(with: storeWordDescription)
+          self.showWordDescription(with: storeWordDescription)
         }
     }
     
     func showRandomWord (with storeRandomWords: [StoreRandomWords]) {
-        dailyWordLabel.text = self.randomWord
+        //dailyWordLabel.text = self.randomWord
+        dailyWordLabel.text = "best"
     }
     
     func showWordDescription (with storeWordDescription: [StoreWordDescription]) {

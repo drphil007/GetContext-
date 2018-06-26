@@ -14,6 +14,8 @@ class SocialContextTableViewController: UITableViewController {
     var socialTry: String = ""
     
     var socialArray: [String] = []
+    var detailArray: [String] = []
+    var imagaArray: [String] = []
     // var thumbNail
     // var imageSocial
     
@@ -37,8 +39,8 @@ class SocialContextTableViewController: UITableViewController {
                 
                 // load images
                 // set defaul in case of nill
-                
-                self.updateUI(with: self.storeSocialContext)
+//
+//                self.updateUI(with: self.storeSocialContext)
             }
         }
         
@@ -49,7 +51,9 @@ class SocialContextTableViewController: UITableViewController {
 
     func updateUI(with storeSocialContext: [StoreSocialContext]) {
         DispatchQueue.main.async {
-                        self.tableView.reloadData()
+           
+            //self.imagaArray = ["MW.jpgf"]
+            self.tableView.reloadData()
         }
     }
     
@@ -66,8 +70,8 @@ class SocialContextTableViewController: UITableViewController {
     
     // Set amount of rows to objects in list.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return socialArray.count
-//        return 1
+          //return socialArray.count
+          return 1
     }
     
     // Set content for cells.
@@ -80,11 +84,13 @@ class SocialContextTableViewController: UITableViewController {
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         // Set text for Title and Detail.
         
-        cell.textLabel?.text = socialArray[indexPath.row]
+        //cell.textLabel?.text = socialArray[indexPath.row]
         //cell.detailTextLabel?.text = [indexPath.row]
-        // thumbnail
+        cell.textLabel?.text = "Definition of BEST"
+        cell.detailTextLabel?.text = "Best definition is - excelling all others. How to use best in a sentence"
         
-        //cell.imageView!.image = imageSocial[IndexPath.row]
+        // thumbnail
+        //cell.imageView!.image = image;
         
         // Set text font.
         cell.textLabel?.font = UIFont (name: "Heavy System", size: 40)

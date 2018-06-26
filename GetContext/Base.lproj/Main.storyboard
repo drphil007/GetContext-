@@ -113,7 +113,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZv-Pj-nVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="-10"/>
+            <point key="canvasLocation" x="796" y="-876"/>
         </scene>
         <!--Daily Word-->
         <scene sceneID="wEr-Pk-KqT">
@@ -150,26 +150,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Word of the Day" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiN-Ff-gfV">
-                                <rect key="frame" x="60" y="185" width="255" height="41"/>
+                                <rect key="frame" x="60" y="185" width="255" height="29.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Loading Word.." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="h4g-nE-u5u">
-                                <rect key="frame" x="70" y="250" width="238" height="52"/>
+                                <rect key="frame" x="53" y="238.5" width="272" height="52"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="nhL-ei-N61"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tBN-mk-kQS">
-                                <rect key="frame" x="55" y="332" width="259" height="52"/>
+                                <rect key="frame" x="55" y="320.5" width="259" height="63.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
@@ -216,7 +216,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d9O-7e-ie3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Daily Word" id="gap-vL-bgX"/>
+                    <tabBarItem key="tabBarItem" title="Daily Word" image="Calender" id="gap-vL-bgX"/>
                     <navigationItem key="navigationItem" id="t6r-RO-C25">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="X5X-0i-h76"/>
                     </navigationItem>
@@ -338,7 +338,7 @@
                             <outlet property="delegate" destination="xga-Ng-uzf" id="LLc-Nc-HXb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="My Words" id="898-fO-Vi8"/>
+                    <tabBarItem key="tabBarItem" title="My Words" image="My Words" id="898-fO-Vi8"/>
                     <navigationItem key="navigationItem" title="My Words" id="WmK-xc-J9M">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Eiv-ef-1cs"/>
                     </navigationItem>
@@ -519,7 +519,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGq-3m-TX1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Word" id="zJP-xm-41M"/>
+                    <tabBarItem key="tabBarItem" title="Word" image="Word" id="zJP-xm-41M"/>
                     <navigationItem key="navigationItem" id="pL0-Je-eig">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="AAd-Pe-LyG"/>
                     </navigationItem>
@@ -649,7 +649,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="puu-DW-5Hg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Content" id="Ag0-St-MTP"/>
+                    <tabBarItem key="tabBarItem" title="Content" image="Content" id="Ag0-St-MTP"/>
                     <connections>
                         <outlet property="generalDiscriptionLabel" destination="I25-4U-AsT" id="yGd-vt-ed4"/>
                         <outlet property="phrasesDiscriptionLabel" destination="8I7-6b-x5V" id="iDP-ya-dfi"/>
@@ -668,19 +668,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.67019683839999999" green="0.66353463229999998" blue="0.8676633883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4lV-kH-sAS">
-                            <rect key="frame" x="0.0" y="114" width="375" height="78"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select one or more Language(s)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LpK-di-Oom">
+                            <rect key="frame" x="0.0" y="114" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Phrases with these Languages">
-                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="25"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="languageCell" textLabel="vn2-Re-3Bt" detailTextLabel="Hx8-HY-6FK" imageView="G0s-Zw-5nh" rowHeight="86" style="IBUITableViewCellStyleValue1" id="znS-2r-oWl">
                                 <rect key="frame" x="0.0" y="28" width="375" height="86"/>
@@ -689,8 +683,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vn2-Re-3Bt">
-                                            <rect key="frame" x="117" y="33" width="33.5" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="vn2-Re-3Bt">
+                                            <rect key="frame" x="16" y="33" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -703,7 +697,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Solid_gray-1" id="G0s-Zw-5nh">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G0s-Zw-5nh">
                                             <rect key="frame" x="16" y="0.0" width="86" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -717,7 +711,7 @@
                             <outlet property="delegate" destination="hP8-1X-WfM" id="pop-bE-If6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Phrases" id="E7Q-FR-nLo"/>
+                    <tabBarItem key="tabBarItem" title="Phrases" image="Phrases" id="E7Q-FR-nLo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="plB-Cm-Cqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -733,29 +727,29 @@
                         <color key="backgroundColor" red="0.67019683839999999" green="0.66353463229999998" blue="0.8676633883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.38094075519999998" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="socialCell" textLabel="uIm-8Q-pcu" detailTextLabel="GVS-mT-kIS" imageView="IwC-4V-Xhw" rowHeight="90" style="IBUITableViewCellStyleValue1" id="tVP-pA-c70">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="socialCell" textLabel="uIm-8Q-pcu" detailTextLabel="GVS-mT-kIS" imageView="IwC-4V-Xhw" rowHeight="111" style="IBUITableViewCellStyleSubtitle" id="tVP-pA-c70">
+                                <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tVP-pA-c70" id="QxA-m9-iaE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uIm-8Q-pcu">
-                                            <rect key="frame" x="121" y="35" width="33.5" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="uIm-8Q-pcu">
+                                            <rect key="frame" x="142" y="35" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GVS-mT-kIS">
-                                            <rect key="frame" x="315" y="35" width="44" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="GVS-mT-kIS">
+                                            <rect key="frame" x="142" y="58.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Solid_gray-1" id="IwC-4V-Xhw">
-                                            <rect key="frame" x="16" y="0.0" width="90" height="89.5"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="MW.jpg" id="IwC-4V-Xhw">
+                                            <rect key="frame" x="16" y="0.0" width="111" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -769,13 +763,13 @@
                             <outlet property="delegate" destination="et2-6Z-23D" id="DHy-fi-h3M"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Social Topics" id="R4c-gf-Lrd"/>
+                    <tabBarItem key="tabBarItem" title="Social Topics" image="Social" id="R4c-gf-Lrd"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljL-Yv-5eP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3758" y="1189"/>
+            <point key="canvasLocation" x="3757.5999999999999" y="1188.7556221889056"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1lT-6U-LIc">
@@ -840,7 +834,7 @@
                             <outlet property="delegate" destination="5Bm-f1-DDi" id="kc3-4v-ltL"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="General" id="hz3-2g-R1f"/>
+                    <tabBarItem key="tabBarItem" title="General" image="info" id="hz3-2g-R1f"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -852,14 +846,22 @@
     </scenes>
     <resources>
         <image name="2" width="383" height="679"/>
+        <image name="Calender" width="29" height="30"/>
+        <image name="Content" width="30" height="30"/>
         <image name="GetContext_Logo" width="126" height="110"/>
         <image name="GetContext_sample8" width="220" height="220"/>
+        <image name="MW.jpg" width="245" height="245"/>
+        <image name="My Words" width="30" height="30"/>
+        <image name="Phrases" width="30" height="30"/>
+        <image name="Social" width="30" height="30"/>
         <image name="Solid_gray-1" width="200" height="200"/>
+        <image name="Word" width="30" height="30"/>
+        <image name="info" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ajb-82-2tx"/>
-        <segue reference="DHz-mr-U2O"/>
-        <segue reference="CHE-al-MxE"/>
-        <segue reference="y6Z-9g-eGL"/>
+        <segue reference="84B-Lg-IxM"/>
+        <segue reference="FiQ-dz-b4N"/>
+        <segue reference="D3s-KO-z8D"/>
+        <segue reference="HKC-8v-nFW"/>
     </inferredMetricsTieBreakers>
 </document>
