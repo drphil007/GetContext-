@@ -13,7 +13,6 @@
 		153C9FB020CA01D0009E8EF9 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 153C9FAF20CA01D0009E8EF9 /* doc */; };
 		15CE735520CFCB2400720FD8 /* MyWordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735420CFCB2400720FD8 /* MyWordsData.swift */; };
 		15CE735720CFCB6100720FD8 /* MyWordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */; };
-		15CE735920CFCBC800720FD8 /* SavedContextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */; };
 		15CE735B20CFCC4D00720FD8 /* ContextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735A20CFCC4D00720FD8 /* ContextData.swift */; };
 		15CE735D20CFDFBE00720FD8 /* SocialContextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */; };
 		15CE735F20CFE47800720FD8 /* ContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE735E20CFE47800720FD8 /* ContextController.swift */; };
@@ -54,7 +53,6 @@
 		153C9FAF20CA01D0009E8EF9 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
 		15CE735420CFCB2400720FD8 /* MyWordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWordsData.swift; sourceTree = "<group>"; };
 		15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWordsTableViewController.swift; sourceTree = "<group>"; };
-		15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedContextTableViewController.swift; sourceTree = "<group>"; };
 		15CE735A20CFCC4D00720FD8 /* ContextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextData.swift; sourceTree = "<group>"; };
 		15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialContextTableViewController.swift; sourceTree = "<group>"; };
 		15CE735E20CFE47800720FD8 /* ContextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextController.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				15CE736F20D920CB00720FD8 /* LanguagesTableViewController.swift */,
 				15CE735420CFCB2400720FD8 /* MyWordsData.swift */,
 				15CE735620CFCB6100720FD8 /* MyWordsTableViewController.swift */,
-				15CE735820CFCBC800720FD8 /* SavedContextTableViewController.swift */,
 				15D0C86620C5D8D80024DBA1 /* Assets.xcassets */,
 				15D0C86820C5D8D80024DBA1 /* LaunchScreen.storyboard */,
 				15D0C86B20C5D8D80024DBA1 /* Info.plist */,
@@ -384,7 +381,6 @@
 				153C9FAC20C9D3A4009E8EF9 /* EnterWordViewController.swift in Sources */,
 				15CE736320D1A52300720FD8 /* DailyWordViewController.swift in Sources */,
 				153C9FAE20C9D6B1009E8EF9 /* ChooseContextViewController.swift in Sources */,
-				15CE735920CFCBC800720FD8 /* SavedContextTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

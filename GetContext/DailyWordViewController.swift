@@ -11,30 +11,38 @@ import UIKit
 class DailyWordViewController: UIViewController {
 
     var randomWord: String = ""
+    
     var wordDescription: String = ""
+    
     var storeRandomWord = [StoreRandomWords]()
     
     var longDefinition: String = ""
+    
     var longFinal: String = ""
+    
     var shortDefinition: String = ""
+    
     var shortFinal: String = ""
+    
     var subDefinition: String = ""
+    
     var subFinal: String = ""
+    
     var storeWordDescription = [StoreWordDescription]()
   
     @IBOutlet weak var dailyWordLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var getContextButton: UIButton!
     
+    // Sent randomWord to ChooseContext as currentWord when buttonPressed.
     @IBAction func getContextButtonPressed(_ sender: Any) {
-        // Sent randomWord to ChooseContext as currentWord
         //currentWord = self.randomWord
         currentDescription = self.shortFinal
+        
         // Go to Context View
          self.performSegue(withIdentifier: "getContext", sender: self)
     }
     
-     // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,19 +64,22 @@ class DailyWordViewController: UIViewController {
         ContextController.shared.fetchWordDescription { (storeWordDescription) in
             if let storeWordDescription = storeWordDescription {
                 // Long Definition
-                for longDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.definitions)! {
+                for longDefinition in (storeWordDescription.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.definitions)! {
                     self.longFinal = longDefinition
                 }
                 print(self.longFinal)
                 
                 // Short definition
-                for shortDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.shortDefinitions)! {
+                for shortDefinition in (storeWordDescription.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.shortDefinitions)! {
                     self.shortFinal = shortDefinition
                 }
                 print(self.shortFinal)
                 
                 // Sub definitions
-                for subDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.subsenses?.first?.definitions)! {
+                for subDefinition in (storeWordDescription.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses?.first?.definitions)! {
                     self.subFinal = subDefinition
                 }
                 print(self.subFinal)
@@ -79,13 +90,13 @@ class DailyWordViewController: UIViewController {
 
     }
 
+    // Update UI with showRandomWord.
     func updateUI(with storeRandomWord: [StoreRandomWords]) {
         DispatchQueue.main.async {
             self.showRandomWord(with: storeRandomWord)
         }
     }
-    
-    
+
     // Update the user interface with storeRandomWord from api.
     func updateUI(with storeWordDescription: [StoreWordDescription]) {
         DispatchQueue.main.async {
@@ -93,17 +104,19 @@ class DailyWordViewController: UIViewController {
         }
     }
     
+    // Function to show a randomword.
     func showRandomWord (with storeRandomWords: [StoreRandomWords]) {
         //dailyWordLabel.text = self.randomWord
         dailyWordLabel.text = "best"
     }
     
+    // Function to show the word description of randomWord.
     func showWordDescription (with storeWordDescription: [StoreWordDescription]) {
         descriptionLabel.text = self.longFinal
     }
     
+    // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

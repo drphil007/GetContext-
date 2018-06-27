@@ -12,8 +12,6 @@ class IntroductionViewController: UIViewController {
 
     @IBOutlet weak var enterNameField: UITextField!
     @IBOutlet weak var startContextButton: UIButton!
-
-    //var alertController: UIAlertController?
     
     @IBAction func enterNameTapped(_ sender: UITextField) {
         // Set user Index
@@ -24,7 +22,6 @@ class IntroductionViewController: UIViewController {
         //print(userName)
         
         // send to firebase and log in (for mywords)
-
     }
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -43,17 +40,19 @@ class IntroductionViewController: UIViewController {
     @IBAction func startPressed(_ sender: Any) {
         if (userName.isEmpty) {
             // Create Alert with function createAlert
-            createAlert(title: "Name missing", message: "Enter your name to continue")
+            nameAlert(title: "Name missing", message: "Enter your name to continue")
         }
         else {
             // Go to next view of game
             print(userName)
-            self.performSegue(withIdentifier: "startContext", sender: self)
+            startAlert(title: "All Set", message: "Remember username next time?")
+            
+            //self.performSegue(withIdentifier: "startContext", sender: self)
         }
     }
     
     // Function to create Alert message.
-    func createAlert(title: String, message: String) {
+    func nameAlert(title: String, message: String) {
         
         // Create alert
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -79,6 +78,29 @@ class IntroductionViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func startAlert(title: String, message: String) {
+        
+        // Create alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // add Cancel button
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // add Ok button
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+            // print name when entered
+            if let name = alert.textFields?.first?.text {
+                print("Your name: \(name)")
+                self.performSegue(withIdentifier: "startContext", sender: self)
+            }
+        }))
+        // show alert
+        self.present(alert, animated: true)
+        
+        
+    }
+    
 //    // Set textfield to entered text.
 //    func textFieldSet(_ textField: UITextField) -> Bool {
 //        if textField == enterNameField {
@@ -86,7 +108,7 @@ class IntroductionViewController: UIViewController {
 //        }
 //        return true
 //    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

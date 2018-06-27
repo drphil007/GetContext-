@@ -108,6 +108,12 @@ the json fix. Day with lots of errors/questions/frustrations.
 # day 16
 * Set tab bar icons from http://www.iconbeast.com/free/
 
+# day 17
+* sources used for wordinfo: 
+* http://examples.yourdictionary.com/phrase-examples.html
+* google / wikipedia / oxforddictionaries
+* www.dictionary.com/e/phonetic-spelling/
+
 
 
 

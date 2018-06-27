@@ -13,60 +13,62 @@ class ContextController {
     // currentWord is word input from user or daily word
     static let shared = ContextController()
     
-    //own app id and app key
+    //App id for API https://developer.oxforddictionaries.com/
     let appId = "95c26713"
+    
+    // App key for API https://developer.oxforddictionaries.com/
     let appKey = "0541f5d55a33a989697d99e8947353e1"
-//
+
 //    let chooseWords = [ "able",
-//        bad
-//        best
-//        better
-//        big
-//        black
-//        certain
-//        clear
-//        different
-//        early
-//        easy
-//        economic
-//        federal
-//        free
-//        full
-//        good
-//        great
-//        hard
-//        high
-//        human
-//        important
-//        international
-//        large
-//        late
-//        little
-//        local
-//        long
-//        low
-//        major
-//        military
-//        national
-//        new
-//        old
-//        only
-//        other
-//        political
-//    possible
-//    public
-//    real
-//    recent
-//    right
-//    small
-//    social
-//    special
-//    strong
-//    sure
-//    true
-//    white
-//    whole
-//    young]
+                //        bad
+                //        best
+                //        better
+                //        big
+                //        black
+                //        certain
+                //        clear
+                //        different
+                //        early
+                //        easy
+                //        economic
+                //        federal
+                //        free
+                //        full
+                //        good
+                //        great
+                //        hard
+                //        high
+                //        human
+                //        important
+                //        international
+                //        large
+                //        late
+                //        little
+                //        local
+                //        long
+                //        low
+                //        major
+                //        military
+                //        national
+                //        new
+                //        old
+                //        only
+                //        other
+                //        political
+                    //    possible
+                    //    public
+                    //    real
+                    //    recent
+                    //    right
+                    //    small
+                    //    social
+                    //    special
+                    //    strong
+                    //    sure
+                    //    true
+                    //    white
+                    //    whole
+                    //    young]
 
 
     // Function to get a (random) word from oxforddictionaries API, category: Art.https://developer.oxforddictionaries.com/documentation

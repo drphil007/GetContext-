@@ -11,11 +11,15 @@ import UIKit
 class SocialContextTableViewController: UITableViewController {
 
     var storeSocialContext = [StoreSocialContext]()
+    
     var socialTry: String = ""
     
     var socialArray: [String] = []
+    
     var detailArray: [String] = []
+    
     var imagaArray: [String] = []
+    
     // var thumbNail
     // var imageSocial
     
@@ -26,8 +30,7 @@ class SocialContextTableViewController: UITableViewController {
         ContextController.shared.fetchSocialContext { (storeSocialContext) in
             if let storeSocialContext = storeSocialContext {
                 print("\n\n\n")
-                
-                
+        
 //                self.socialTry = (storeSocialContext.items?.first?.metatags?.first?.title)!
 //                print(self.socialTry)
                 
@@ -43,12 +46,10 @@ class SocialContextTableViewController: UITableViewController {
 //                self.updateUI(with: self.storeSocialContext)
             }
         }
-        
 //        self.socialArray = ["\(self.socialTry)"]
-        
     }
     
-
+    // Update UI with.
     func updateUI(with storeSocialContext: [StoreSocialContext]) {
         DispatchQueue.main.async {
            
@@ -60,7 +61,6 @@ class SocialContextTableViewController: UITableViewController {
     // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     // Return the number of sections.
@@ -81,6 +81,7 @@ class SocialContextTableViewController: UITableViewController {
         return cell
     }
     
+    // Configure cell content.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         // Set text for Title and Detail.
         
@@ -96,5 +97,4 @@ class SocialContextTableViewController: UITableViewController {
         cell.textLabel?.font = UIFont (name: "Heavy System", size: 40)
         cell.detailTextLabel?.font = UIFont (name: "Heavy System", size: 20)
     }
-    
 }
