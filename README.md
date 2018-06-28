@@ -6,11 +6,11 @@ The goal of this app is to give the user a quick overview of the semantic and cu
 
 ![Allows the user to enter a word](doc/EnterWord.png) 
 <img="https://raw.githubusercontent.com/drphil007/GetContext-/master/doc/EnterWord.png" width="256" height="256" title="Enter a Word">
-![Displays Word of the Day and description](DailyWord.png) 
-![General Info about chosen word, in this case word of the day](genInfo.png) 
-![Enables user to choose language in which to see phrases](Phrases1.png) 
-![Phrases with chosen word in different languages](Phrases2.png)
-![Social Context with chosen word]()
+![Displays Word of the Day and description](doc/DailyWord.png) 
+![General Info about chosen word, in this case word of the day](doc/genInfo.png) 
+![Enables user to choose language in which to see phrases](doc/Phrases1.png) 
+![Phrases with chosen word in different languages](doc/Phrases2.png)
+![Social Context with chosen word](doc/Phrases2.png)
 
 ## Main Features 
 The app allows you the enter a word OR check up the word of the day and get context.
