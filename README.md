@@ -4,8 +4,16 @@ An app that allows the user to get semantic and cultural context of a word in an
 ## Purpose
 The goal of this app is to give the user a quick overview of the semantic and cultural usages of a word in different languages to emphasize it's differences. This will help to prevent misunderstanding in communication and translation and hopes to advance understanding and learning of different language and apricate it's differences. The uses of this can be for learning a language, a situation in which knowledge of contextual differences of a word are needed: communication between two different language users (e.g. travellers or for business purposes) or simply curiosity. 
 <p align="center">
-<img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/1.png">
-<img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/2.png">
+    <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/1.png">
+    <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/2.png">
+</p>
+<p align="center">
+    <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/3.png">
+    <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/4.png">
+</p>
+<p align="center">
+    <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/5.png">
+    <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/6.png">
 </p>
 ## Main Features 
 The app allows you the enter a word OR check up the word of the day and get context.
