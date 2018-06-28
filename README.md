@@ -4,10 +4,7 @@ An app that allows the user to get semantic and cultural context of a word in an
 ## Purpose
 The goal of this app is to give the user a quick overview of the semantic and cultural usages of a word in different languages to emphasize it's differences. This will help to prevent misunderstanding in communication and translation and hopes to advance understanding and learning of different language and apricate it's differences. The uses of this can be for learning a language, a situation in which knowledge of contextual differences of a word are needed: communication between two different language users (e.g. travellers or for business purposes) or simply curiosity. 
 
-![Allows the user to enter a word](doc/EnterWord.png) 
-`<img="https://raw.githubusercontent.com/drphil007/GetContext-/master/doc/EnterWord.png" width="256" height="256" title="Enter a Word">`
-![Displays Word of the Day and description](doc/DailyWord.png) 
-![General Info about chosen word, in this case word of the day](doc/genInfo.png) 
+![](doc/display/1.png) ![](doc/display/2.png) ![](doc/display/3.png) 
 ![Enables user to choose language in which to see phrases](doc/Phrases1.png) 
 ![Phrases with chosen word in different languages](doc/Phrases2.png)
 ![Social Context with chosen word](doc/Phrases2.png)
