@@ -54,9 +54,9 @@
 		15CE735C20CFDFBE00720FD8 /* SocialContextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialContextTableViewController.swift; sourceTree = "<group>"; };
 		15CE735E20CFE47800720FD8 /* ContextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextController.swift; sourceTree = "<group>"; };
 		15CE736220D1A52300720FD8 /* DailyWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordViewController.swift; sourceTree = "<group>"; };
-		15CE736420D8319500720FD8 /* PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PROCESS.md; path = ../PROCESS.md; sourceTree = "<group>"; };
+		15CE736420D8319500720FD8 /* PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROCESS.md; sourceTree = "<group>"; };
 		15CE736520D8319500720FD8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		15CE736620D8319800720FD8 /* DESIGN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = DESIGN.md; path = ../DESIGN.md; sourceTree = "<group>"; };
+		15CE736620D8319800720FD8 /* DESIGN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
 		15CE736720D90FF500720FD8 /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
 		15CE736F20D920CB00720FD8 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		15CE737320E4E85300720FD8 /* REPORT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = REPORT.md; sourceTree = "<group>"; };
