@@ -12,8 +12,6 @@
 		<dict>
 			<key>https://od-api.oxforddictionaries.com:443/api/v1</key>
 			<string></string>
-			<key>api.trendspottr.com</key>
-			<string></string>
 		</dict>
 	</dict>
 	<key>UIAppFonts</key>

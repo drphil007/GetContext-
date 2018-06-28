@@ -10,26 +10,33 @@ import UIKit
 
 class DailyWordViewController: UIViewController {
 
+    var storeRandomWord = [StoreRandomWords]()
+    var storeWordDescription = [StoreWordDescription]()
+    
+    // Set var for randomWord, which will be the dailyWord.
     var randomWord: String = ""
     
+    // Set var for word description of randomword.
     var wordDescription: String = ""
     
-    var storeRandomWord = [StoreRandomWords]()
-    
+    // Definition in JSON struct.
     var longDefinition: String = ""
     
+    // Final definition extracted from struct.
     var longFinal: String = ""
     
+    // Short definition in JSON struct.
     var shortDefinition: String = ""
     
+    // Final short definition extracted from struct.
     var shortFinal: String = ""
     
+    // Sub definition in JSON struct.
     var subDefinition: String = ""
     
+    // Final sub definition extracted from struct.
     var subFinal: String = ""
     
-    var storeWordDescription = [StoreWordDescription]()
-  
     @IBOutlet weak var dailyWordLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var getContextButton: UIButton!

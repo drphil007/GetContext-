@@ -12,26 +12,37 @@ class GeneralTableViewController: UITableViewController {
     
     var storeWordDescription = [StoreWordDescription]()
     
+    // Definition in JSON struct.
     var longDefinition: String = ""
     
+    // Final definition extracted from struct.
     var longFinal: String = ""
     
+    // Set variable for Example Phrase.
     var examplePhrase: String = ""
     
+    // Set variable for subExample Phrase.
     var subExamplePhrase: String = ""
     
+    // Set variable for Grammatical Feature.
     var grammaticalFeature: String = ""
     
+    // Etymologies in JSON struct.
     var etymologies: String = ""
     
-    var lexicalCategory: String = ""
-    
-    var phoneticSpelling: String = ""
-    
+    // Final etymologies extracted from struct.
     var etymolFinal: String = ""
     
+    // Set variable for lexical category.
+    var lexicalCategory: String = ""
+    
+    // Set variable for Phonetic Spelling.
+    var phoneticSpelling: String = ""
+    
+    // Set bool for when cell clicked.
     var cellOn: Bool = true
     
+    // Set array for cell Title.
     let generalTitle = ["Word",
                         "Definitions",
                         "Example Phrase",
@@ -40,9 +51,10 @@ class GeneralTableViewController: UITableViewController {
                         "Lexical Category",
                         "Phonetic Spelling"]
     
+    // Set array for cell Detail.
     var detail: [String] = []
     
-    // Sources used for wordInfo description see list in READ.ME
+    // Set array for Detail Info.Sources used for wordInfo description see list in READ.ME.
     var moreInfo = ["a single unit of language that has meaning and can be spoken or written",
                     "a statement of the exact meaning of a word",
                     "A phrase is a group or words that express a concept and is used as a unit within a sentence.",
@@ -106,7 +118,7 @@ class GeneralTableViewController: UITableViewController {
     // Update the view with.
     func updateUI(with storeWordDescription: [StoreWordDescription]) {
         DispatchQueue.main.async {
-            self.detail = ["test","\(self.longFinal)","\(self.examplePhrase)","\(self.grammaticalFeature)",
+            self.detail = ["\(currentWord)","\(self.longFinal)","\(self.examplePhrase)","\(self.grammaticalFeature)",
                 "\(self.etymolFinal)","\(self.lexicalCategory)","\(self.phoneticSpelling)"]
             self.tableView.reloadData()
         }
@@ -115,18 +127,28 @@ class GeneralTableViewController: UITableViewController {
     // If row get selected change content of cell.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // Used source for info:https://stackoverflow.com/questions/26158768/how-to-get-textlabel-of-selected-row-in-swift
+        // Used source for info:https://stackoverflow.com/questions/26158768/how-to-get-textlabel-of-selected-row-in-swift.
         let indexPath = tableView.indexPathForSelectedRow
         
         let currentCell = tableView.cellForRow(at: indexPath!) as UITableViewCell?
         
         // Set cell to data when selected.
         if cellOn == true {
+            // Set Content.
             currentCell?.detailTextLabel?.text = moreInfo[(indexPath?.row)!]
+            
+            // Set Font.
+            currentCell?.detailTextLabel?.font = currentCell?.detailTextLabel?.font.bold
+            currentCell?.textLabel?.font.withSize(21)
+            
+            // Set bool when clicked.
             cellOn = false
             print(cellOn)
         } else {
+            // Change content back to original data.
             self.tableView.reloadData()
+            
+            // Set bool when clicked.
             cellOn = true
             print(cellOn)
         }

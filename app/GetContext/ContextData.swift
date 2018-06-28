@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: - Current variables.
+
 // Set variabel for randomWord.
 var randomWord: String = ""
 
@@ -23,7 +25,7 @@ var randomWordIndex = 0
 
 var currentTargetLanguage: String = ""
 
-// Struct RandomWords
+// MARK: - Struct RandomWords
 struct StoreRandomWords: Codable {
     let results: [RandomResult]
 }
@@ -32,7 +34,7 @@ struct RandomResult: Codable {
     let word: String
 }
 
-// Struct Description of word, word-info.
+// MARK: - Struct Description of word, word-info.
 struct StoreWordDescription: Codable {
     let results: [Result]
 }
@@ -117,7 +119,7 @@ struct Pronunciation: Codable {
     let phoneticNotation, phoneticSpelling: String
 }
 
-// Store Translations
+// MARK: - Store Translations
 struct StoreTranslation: Codable {
     let results: [TranslationResult]
 }
@@ -184,7 +186,8 @@ enum Language: String, Codable {
     case es = "es"
 }
 
-// Struct SocialContext: https://stackoverflow.com/questions/49358645/decoding-google-custom-search-api-in-swift-4-using-decodable-protocol
+// MARK: - Struct SocialContext
+// source: https://stackoverflow.com/questions/49358645/decoding-google-custom-search-api-in-swift-4-using-decodable-protocol.
 struct StoreSocialContext: Decodable
 {
     var items: [Item]?
@@ -224,4 +227,3 @@ struct enclosedTags: Decodable
 //        case image = "og:image", title = "og:title", description = "og:description", siteName = "og:site_name"
 //    }
 }
-

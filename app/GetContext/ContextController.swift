@@ -71,18 +71,22 @@ class ContextController {
                     //    young]
 
 
-    // Function to get a (random) word from oxforddictionaries API, category: Art.https://developer.oxforddictionaries.com/documentation
+    // MARK - Function to get a (random) word from oxforddictionaries API.
     func fetchRandomWord(completion: @escaping (StoreRandomWords?) -> Void) {
+        
+        // Variables for request.
         let language = "en"
-//        let filters = "registers=Rare;domains=Art"
         let filters = "registers%3DRare%3Bdomains%3DArt?"
         let limit = "limit=1"
+       
+        // Build url for request.
         let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/wordlist/\(language)/\(filters)\(limit)")!
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue(appId, forHTTPHeaderField: "app_id")
         request.addValue(appKey, forHTTPHeaderField: "app_key")
 
+        // Fetch data.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
@@ -100,21 +104,24 @@ class ContextController {
         task.resume()
     }
 
-    // Function to get Word Info from oxforddictionaries API https://developer.oxforddictionaries.com/documentation.
+    // MARK: - Function to get Word Info from oxforddictionaries API.
     func fetchWordDescription(completion: @escaping (StoreWordDescription?) -> Void) {
-        // Set language is languge from inputed word. For now set to Eng.
+        
+        // Variables for request.
         let language = "en"
-        // Set word is currentWord from input or from daily word.
-        currentWord = "best"
+        currentWord = "best" // Demo word.
         let word = "\(currentWord)"
         print(currentWord)
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
         let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)")!
         var request = URLRequest(url: url)
+        
+        // Build url for request.
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue(appId, forHTTPHeaderField: "app_id")
         request.addValue(appKey, forHTTPHeaderField: "app_key")
        
+        // Fetch data.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
@@ -132,24 +139,25 @@ class ContextController {
         task.resume()
     }
     
-    // Function to get Word Translation from oxforddictionaries API https://developer.oxforddictionaries.com/documentation.
+    // MARK: - Function to get Word Translation from oxforddictionaries API.
     func fetchWordTranslation(completion: @escaping (StoreTranslation?) -> Void) {
-        // Set language is languge from inputed word. For now set to Eng.
+       
+        // Variables for request.
         let language = "en"
-        // Target language should be any possible translations.
-        // es
         currentTargetLanguage = "es"
         let target_lang = "\(currentTargetLanguage)"
         let word = "change"
-        // says "11db when value in unwrapped and is nill, fix that
-        // with if/else statement in viewcontroller when fetch
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
+       
+        
+        // Build url for request.
         let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/translations=\(target_lang)")!
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue(appId, forHTTPHeaderField: "app_id")
         request.addValue(appKey, forHTTPHeaderField: "app_key")
         
+        // Fetch data.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
@@ -167,14 +175,17 @@ class ContextController {
         task.resume()
     }
     
-    // Social Context from Google Search Custom API.
+    // MARK: - Social Context from Google Search Custom API.
     func fetchSocialContext(completion: @escaping (StoreSocialContext?) -> Void) {
+        
+        // Variables to build request.
         let apiKey = "AIzaSyA9yV1lOOWbUv0RLNZ_M_XVuNXmTsU1x0I"
         let bundleID = "com.mprog.GetContext"
         let searchKey = "006207088670286226506:ci6ag3ipfoi"
         let query = "Best"
-        let serverAddress = String(format: "https://www.googleapis.com/customsearch/v1?q=\(query)&key=\(apiKey)&cx=\(searchKey)")
         
+        // Build url for request.
+        let serverAddress = String(format: "https://www.googleapis.com/customsearch/v1?q=\(query)&key=\(apiKey)&cx=\(searchKey)")
         let url = serverAddress.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let finalUrl = URL(string: url!)
         let request = NSMutableURLRequest(url: finalUrl!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
@@ -184,6 +195,7 @@ class ContextController {
         let session = URLSession.shared
         //        let jsonString = ""
         
+        // Fetch data.
         let datatask = session.dataTask(with: request as URLRequest) { (data, response, error) in
             do {
                                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{

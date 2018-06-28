@@ -10,20 +10,31 @@ import UIKit
 
 class ChooseContextViewController: UIViewController {
     
+    // Set var for short description.
     var shortFinal: String = ""
+    
+    // Set var for sub definition.
     var subDefinition: String = ""
+    
     var storeWordDescription = [StoreWordDescription]()
     
     @IBOutlet weak var generalDiscriptionLabel: UILabel!
     @IBOutlet weak var phrasesDiscriptionLabel: UILabel!
     @IBOutlet weak var socialDiscriptionLabel: UILabel!
     
-    //var gereneralString =  "\(currentWord.uppercased()): \(currentDescription)"
+    // Set var for general info title.
     var gereneralString = "BEST: \(currentDescription)"
-    //var phraseString = "Everyday phrases with \(currentWord.uppercased())"
+   
+    // Set var for phrases title.
     var phraseString = "Everyday phrases with BEST"
-    //var socialString = "Social Topics with \(currentWord.uppercased())"
+    
+    // Set var for social title.
     var socialString = "Social Topics with BEST"
+    
+    // Turned off for demo.
+    //var gereneralString =  "\(currentWord.uppercased()): \(currentDescription)"
+    //var phraseString = "Everyday phrases with \(currentWord.uppercased())"
+    //var socialString = "Social Topics with \(currentWord.uppercased())"
     
     // Do any additional setup after loading the view.
     override func viewDidLoad() {
@@ -36,10 +47,8 @@ class ChooseContextViewController: UIViewController {
         self.socialDiscriptionLabel.text = self.socialString
     }
     
+      // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    // Sent currentWord to next Controller. (General & Phrases)
 }

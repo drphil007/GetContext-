@@ -10,19 +10,25 @@ import UIKit
 
 class EnterWordViewController: UIViewController {
  
-    var shortDefinition: String = ""
-    var shortFinal: String = ""
     var storeWordDescription = [StoreWordDescription]()
+    
+    // Short definition in JSON struct.
+    var shortDefinition: String = ""
+    
+    // Final short definition extracted from struct.
+    var shortFinal: String = ""
     
     @IBOutlet weak var wordField: UITextField!
     @IBOutlet weak var getContextButton: UIButton!
     
+    // Set word to input user.
     @IBAction func wordFieldChanged(_ sender: UITextField) {
         // Set text to entered word
         currentWord = wordField.text!
-//        setDescription()
+        // setDescription()
     }
     
+    // When button pressed without word create alert.
     @IBAction func getContextPressed(_ sender: Any) {
         // make sure user enters word
         if currentWord.isEmpty {
@@ -32,7 +38,7 @@ class EnterWordViewController: UIViewController {
             print(currentWord)
             // Description not yet in right place called, doesn't go trough 
             setDescription()
-//            print(currentDescription)
+            // print(currentDescription)
             // Go to Context View
             self.performSegue(withIdentifier: "getWord", sender: self)
         }
@@ -51,6 +57,7 @@ class EnterWordViewController: UIViewController {
         getContextButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
     }
     
+    // Function to set description for currentWord.
     func setDescription() {
         // Fetch data for Description.
         ContextController.shared.fetchWordDescription { (storeWordDescription) in
@@ -99,5 +106,10 @@ class EnterWordViewController: UIViewController {
     }
 
     // Pass data to the Context Views: Segue.
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { if segue.identifier == "getWord" {
+//        let ChooseContextViewController = segue.destination as! ChooseContextViewController
+//        ChooseContextViewController.currentWord = currentWord
+//        }
+//    }
 }
 

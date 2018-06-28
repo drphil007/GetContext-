@@ -12,12 +12,16 @@ class SocialContextTableViewController: UITableViewController {
 
     var storeSocialContext = [StoreSocialContext]()
     
+    // Set test array.
     var socialTry: String = ""
     
+    // Set array for cell title.
     var socialArray: [String] = []
     
+    // Set array for cell detail.
     var detailArray: [String] = []
     
+    // Set array for images.
     var imagaArray: [String] = []
     
     // var thumbNail
@@ -29,31 +33,19 @@ class SocialContextTableViewController: UITableViewController {
         // FetchSocialContext
         ContextController.shared.fetchSocialContext { (storeSocialContext) in
             if let storeSocialContext = storeSocialContext {
-                print("\n\n\n")
-        
-//                self.socialTry = (storeSocialContext.items?.first?.metatags?.first?.title)!
-//                print(self.socialTry)
-                
-                // load web views + thumnails
-                // if first is nil
-                    // else do next
-                    // else if still nill
-                        // print "No current sources"
-                
-                // load images
-                // set defaul in case of nill
-//
-//                self.updateUI(with: self.storeSocialContext)
+                // Turned off for demo.
+                // self.socialTry = (storeSocialContext.items?.first?.metatags?.first?.title)!
+                // print(self.socialTry)
+
+                // self.updateUI(with: self.storeSocialContext)
             }
         }
-//        self.socialArray = ["\(self.socialTry)"]
+        // self.socialArray = ["\(self.socialTry)"]
     }
     
     // Update UI with.
     func updateUI(with storeSocialContext: [StoreSocialContext]) {
         DispatchQueue.main.async {
-           
-            //self.imagaArray = ["MW.jpgf"]
             self.tableView.reloadData()
         }
     }
@@ -83,14 +75,14 @@ class SocialContextTableViewController: UITableViewController {
     
     // Configure cell content.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        // Set text for Title and Detail.
         
-        //cell.textLabel?.text = socialArray[indexPath.row]
-        //cell.detailTextLabel?.text = [indexPath.row]
+        // Set text for Title and Detail.
         cell.textLabel?.text = "Definition of BEST"
         cell.detailTextLabel?.text = "Best definition is - excelling all others. How to use best in a sentence"
         
-        // thumbnail
+        // Turned of for Demo.
+        //cell.textLabel?.text = socialArray[indexPath.row]
+        //cell.detailTextLabel?.text = [indexPath.row]
         //cell.imageView!.image = image;
         
         // Set text font.

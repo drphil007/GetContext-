@@ -98,23 +98,30 @@ the json fix. Day with lots of errors/questions/frustrations.
 
 # day 14
 * Social context and phrases almost done. 
-* Discussed firebase at presentation: considering using firebase only for words. 
+* Discussed firebase at presentation: considering using firebase only for words, or not at all.
 * Tips about layout. Will implement those. 
 
 # day 15
 * Migraine, trip to the doctor. 
 
-
 # day 16
 * Set tab bar icons from http://www.iconbeast.com/free/
+* Edited DidSelectRow to enable selection of rows.
+* Edited layout from presentation tips.
+* Decided to finally skip out fireBase for good; didn't have any core functions but could have been a nice feature,
+also there wasn't any time left to do it.
 
 # day 17
 * sources used for wordinfo: 
-* http://examples.yourdictionary.com/phrase-examples.html
-* google / wikipedia / oxforddictionaries
-* www.dictionary.com/e/phonetic-spelling/
+    * http://examples.yourdictionary.com/phrase-examples.html
+    * google / wikipedia / oxforddictionaries
+    * www.dictionary.com/e/phonetic-spelling/
+* Cleaned code & comments. 
+* Cleaned github.
+* Read up on Final version, Final report, Product demo.
 
-
-
-
-
+# day 18
+* Final report.
+* Finl version.
+* Demo.
+* Code checking of peers (stand up group).
