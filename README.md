@@ -15,8 +15,9 @@ The goal of this app is to give the user a quick overview of the semantic and cu
     <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/5.png">
     <img src="https://github.com/drphil007/GetContext-/raw/master/doc/display/6.png">
 </p>
+
 ## Main Features 
-The app allows you the enter a word OR check up the word of the day and get context.
+The app allows you the enter a word OR check up the word of the day and get context. 
 Context consists of General Info, Phrases and Social Context. 
 * General info about said word: Word, Definitions, Example Phrase,Grammatical Features, Etymologies, Lexical Category, Phonetic Spelling
 * Phrases with everyday sentences in several languages: English, Spanish, Pedi, Zulu, Malay, Indonesion, Tswana, Urdu, German.
