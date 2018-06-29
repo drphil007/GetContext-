@@ -18,31 +18,38 @@ class ChooseContextViewController: UIViewController {
     
     var storeWordDescription = [StoreWordDescription]()
     
+    // Set variabel for currentWord.
+    var currentWord: String = ""
+    
+    var generalString: String = ""
+    var phraseString: String = ""
+    var socialString: String = ""
+    
     @IBOutlet weak var generalDiscriptionLabel: UILabel!
     @IBOutlet weak var phrasesDiscriptionLabel: UILabel!
     @IBOutlet weak var socialDiscriptionLabel: UILabel!
     
-    // Set var for general info title.
-    var gereneralString = "BEST: \(currentDescription)"
-   
-    // Set var for phrases title.
-    var phraseString = "Everyday phrases with BEST"
-    
-    // Set var for social title.
-    var socialString = "Social Topics with BEST"
-    
-    // Turned off for demo.
-    //var gereneralString =  "\(currentWord.uppercased()): \(currentDescription)"
-    //var phraseString = "Everyday phrases with \(currentWord.uppercased())"
-    //var socialString = "Social Topics with \(currentWord.uppercased())"
-    
+
     // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set var for general info title.
+        generalString = "BEST: \(currentDescription)"
+
+        // Set var for phrases title.
+        phraseString = "Everyday phrases with BEST"
+
+        // Set var for social title.
+        socialString = "Social Topics with BEST"
+        
+        // Turned off for demo.
+//        generalString =  "\(currentWord.uppercased()): \(currentDescription)"
+//        phraseString = "Everyday phrases with \(currentWord.uppercased())"
+//        socialString = "Social Topics with \(currentWord.uppercased())"
+    
         // Fetch data for Word Info
-        self.generalDiscriptionLabel.text = self.gereneralString
-        print(self.generalDiscriptionLabel.text!)
+        self.generalDiscriptionLabel.text = self.generalString
         self.phrasesDiscriptionLabel.text = self.phraseString
         self.socialDiscriptionLabel.text = self.socialString
     }

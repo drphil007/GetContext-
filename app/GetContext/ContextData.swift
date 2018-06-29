@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: - Current variables.
 
-// Set variabel for randomWord.
-var randomWord: String = ""
-
 // Set variabel for currentWord.
 var currentWord: String = ""
+
+// Set variabel for randomWord.
+var randomWord: String = ""
 
 // Set variabel for currentDescription
 var currentDescription: String = ""
@@ -222,8 +222,8 @@ struct enclosedTags: Decodable
     let description: String?
     let siteName: String?
     
-//    private enum CodingKeys : String, CodingKey
-//    {
-//        case image = "og:image", title = "og:title", description = "og:description", siteName = "og:site_name"
-//    }
+    private enum CodingKeys : String, CodingKey
+    {
+        case image = "og:image", title = "og:title", description = "og:description", siteName = "og:site_name"
+    }
 }

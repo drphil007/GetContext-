@@ -10,7 +10,7 @@ The goal of this app is to give the user a quick overview of the semantic and cu
 ![General Info about chosen word, in this case word of the day](doc/genInfo.png) 
 ![Enables user to choose language in which to see phrases](doc/Phrases1.png) 
 ![Phrases with chosen word in different languages](doc/Phrases2.png)
-![Social Context with chosen word](doc/Phrases2.png)
+![Social Context with chosen word](doc/SocialContext.png)
 
 ## Main Features 
 The app allows you the enter a word OR check up the word of the day and get context.
@@ -29,11 +29,16 @@ Context consists of General Info, Phrases and Social Context.
 * Many Thanks and acknowledgements to [PGDEV](https://stackoverflow.com/users/5716829/pgdev) for providing source code and being the original writer for the Google search API. 
 * Many Thanks and acknowledgements to [Sergio Trejo](https://stackoverflow.com/users/8385022/sergio-trejo)
 for providing feedback on this API [question](https://stackoverflow.com/questions/50936245/how-to-display-parsed-json-data-in-swift/50936354?noredirect=1#comment88941315_50936354.)
+* Many thanks to jbreuer95 for solving the resizing of the screenshot 
+on this README.md (listed as collaberator).
 
 For General Info the following sources are used:
 * http://examples.yourdictionary.com/phrase-examples.html
 * google / wikipedia / oxforddictionaries
 * www.dictionary.com/e/phonetic-spelling/
+
+## Demo
+* [See the demo in Dutch](https://youtu.be/LmAHF_lFU9k)
 
 ## Authors
 Philine Wairata - June 28th, 2018. 

@@ -29,31 +29,11 @@ class LanguagesTableViewController: UITableViewController {
     
     var storeTranslation = [StoreTranslation]()
     
-    // Languages to choose from.
-    var languagesTitle = ["English",
-                          "Spanish",
-                          "Pedi",
-                          "Zulu",
-                          "Malay",
-                          "Indonesion",
-                          "Tswana",
-                          "Urdu",
-                          "German"]
-    
-    // Spoken language countries.
-    let languagesCodes = ["US, UK, Canada, Australia, Ireland, New Zealand",
-                          "Mexico, Colombia, Spain, Argentina",
-                          "Northern Sotho; Africa",
-                          "South Africa",
-                          "Brunei, Indonesia, Malaysia",
-                          "Indonesia",
-                          "South Africa",
-                          "Pakistan",
-                          "Germany"]
+    // MARK: - Translation variables.
     
     //  English sentence for Spanish translation.
     var esTranslation: String = ""
-
+    
     // Spanish translation.
     var esTranslated: String = ""
     
@@ -105,6 +85,32 @@ class LanguagesTableViewController: UITableViewController {
     // Set array for translation.
     var transPairs: [String] = []
     
+    // MARK: - LanguageArrays.
+    
+    // Languages to choose from.
+    var languagesTitle = ["English",
+                          "Spanish",
+                          "Pedi",
+                          "Zulu",
+                          "Malay",
+                          "Indonesion",
+                          "Tswana",
+                          "Urdu",
+                          "German"]
+    
+    // Spoken language countries.
+    let languagesCodes = ["US, UK, Canada, Australia, Ireland, New Zealand",
+                          "Mexico, Colombia, Spain, Argentina",
+                          "Northern Sotho; Africa",
+                          "South Africa",
+                          "Brunei, Indonesia, Malaysia",
+                          "Indonesia",
+                          "South Africa",
+                          "Pakistan",
+                          "Germany"]
+    
+    // MARK: - DemoArrays.
+    
     // Demo array for English sentences.
     var demoEngPairs = ["EN: English Example Phrase ",
                         "EN: she gave her best ever performance",
@@ -137,32 +143,166 @@ class LanguagesTableViewController: UITableViewController {
         ContextController.shared.fetchWordTranslation { (storeTranslation) in
             if let storeTranslation = storeTranslation{
                 
-                // code for "if nil"
-                // Example phrase in English
-                // Example phrase
+                // Translation English
+                currentTargetLanguage = "es"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.esTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.esTranslation = "currently not available."
+                }
+                
+                
+                // Translation Spanish
+                currentTargetLanguage = "es"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.esTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.esTranslated = "currently not available."
+                }
                 
                 // Translation English
-                self.esTranslation = (storeTranslation.results.first?.lexicalEntries
+                currentTargetLanguage = "nso"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                self.nsoTranslation = (storeTranslation.results.first?.lexicalEntries
                     .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
-                print(self.esTranslation)
-                
-                // Translation Other language (Spanish)
-                // currentTargetLanguage = "es"
-                self.esTranslated = (storeTranslation.results.first?.lexicalEntries
-                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
-                print(self.esTranslated)
-                
-                // Translation English
-                self.zuTranslation = (storeTranslation.results.first?.lexicalEntries
-                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
-                print(self.zuTranslation)
+                } else {
+                    self.nsoTranslation = "currently not available."
+                }
 
                 // Translation Other language (Pedi)
                 currentTargetLanguage = "nso"
-                self.nsoTranslated = (storeTranslation.results.first?.lexicalEntries
-                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
-                print(self.nsoTranslated)
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.nsoTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.nsoTranslated = "currently not available."
+                }
                 
+                // Translation English
+                currentTargetLanguage = "zu"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.zuTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.zuTranslation = "currently not available."
+                }
+                
+                // Translation Zulu
+                currentTargetLanguage = "zu"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.zuTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.zuTranslated = "currently not available."
+                }
+                
+                // Translation English
+                currentTargetLanguage = "ms"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.msTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.msTranslation = "currently not available."
+                }
+                
+                // Translation Malay
+                currentTargetLanguage = "ms"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.msTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.msTranslated = "currently not available."
+                }
+                
+                // Translation English
+                currentTargetLanguage = "id"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.idTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.idTranslation = "currently not available."
+                }
+                
+                // Translation Indonesion
+                currentTargetLanguage = "id"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.idTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.idTranslated = "currently not available."
+                }
+                
+                // Translation English
+                currentTargetLanguage = "tn"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.tnTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.tnTranslation = "currently not available."
+                }
+                
+                // Translation Tswana
+                currentTargetLanguage = "tn"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.tnTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.tnTranslated = "currently not available."
+                }
+                
+                // Translation English
+                currentTargetLanguage = "ur"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.urTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.urTranslation = "currently not available."
+                }
+                
+                // Translation Urdu
+                currentTargetLanguage = "ur"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.urTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.urTranslated = "currently not available."
+                }
+                
+                // Translation English
+                currentTargetLanguage = "de"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text) != nil {
+                    self.deTranslation = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.text)!
+                } else {
+                    self.deTranslation = "currently not available."
+                }
+                
+                // Translation German
+                currentTargetLanguage = "de"
+                if (storeTranslation.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text) != nil {
+                    self.deTranslated = (storeTranslation.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses!.first?.examples?.first?.translations.first?.text)!
+                } else {
+                    self.deTranslated = "currently not available."
+                }
                 // self.updateUI(with: self.storeTranslation)
             }
         }
@@ -205,7 +345,7 @@ class LanguagesTableViewController: UITableViewController {
         // Set currentcell to current indexpath
         let currentCell = tableView.cellForRow(at: indexPath!) as UITableViewCell?
         
-        // Set cell text. Bool now works for every cell: set bool to one row.
+        // Set cell text. 
         if cellOn == true {
             // Set Text.
             currentCell?.textLabel?.text = demoEngPairs[(indexPath?.row)!]
@@ -216,7 +356,6 @@ class LanguagesTableViewController: UITableViewController {
             currentCell?.detailTextLabel?.font = currentCell?.textLabel?.font.withSize(21)
             currentCell?.detailTextLabel?.font = currentCell?.textLabel?.font.bold
             cellOn = false
-            print(cellOn)
         } else {
             // Set Text.
             currentCell?.textLabel?.text = languagesTitle[(indexPath?.row)!]
@@ -227,7 +366,6 @@ class LanguagesTableViewController: UITableViewController {
             currentCell?.textLabel?.font = currentCell?.textLabel?.font.withSize(26)
             currentCell?.detailTextLabel?.font = currentCell?.textLabel?.font.withSize(21)
             cellOn = true
-            print(cellOn)
         }
         //tableView.deselectRow(at: indexPath!, animated: true)
     }

@@ -23,28 +23,25 @@ class EnterWordViewController: UIViewController {
     
     // Set word to input user.
     @IBAction func wordFieldChanged(_ sender: UITextField) {
-        // Set text to entered word
         currentWord = wordField.text!
-        // setDescription()
     }
     
     // When button pressed without word create alert.
     @IBAction func getContextPressed(_ sender: Any) {
         // make sure user enters word
-        if currentWord.isEmpty {
+        if (currentWord.isEmpty) {
             createAlert(title: "Word Missing", message: "Enter a Word to continue")
         }
         else {
-            print(currentWord)
-            // Description not yet in right place called, doesn't go trough 
             setDescription()
-            // print(currentDescription)
-            // Go to Context View
+            
+            // Sent currentWord to ChooseContextViewController.
+            //let vc = self.tabBarController?.viewControllers![0] as! ChooseContextViewController
+            //vc.currentWord = currentWord
+
+            // Perform segue, go to ChooseContextViewController.
             self.performSegue(withIdentifier: "getWord", sender: self)
         }
-        print(currentWord)
-        print("hey",currentDescription)
-        print("\n")
     }
     
     // Do any additional setup after loading the view.
@@ -66,10 +63,8 @@ class EnterWordViewController: UIViewController {
                 for shortDefinition in (storeWordDescription.results.first?.lexicalEntries.first?.entries.first?.senses.first?.shortDefinitions)! {
                     self.shortFinal = shortDefinition
                 }
-                print(self.shortFinal)
             }
         }
-        
         currentDescription = self.shortFinal
     }
     
@@ -90,9 +85,8 @@ class EnterWordViewController: UIViewController {
         // add Ok button
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             
-            // print name when entered
-            if let currentWord = alert.textFields?.first?.text {
-                print("Word: \(currentWord)")
+            // Sent to next controller when word filled in.
+            if (alert.textFields?.first?.text) != nil {
                 self.performSegue(withIdentifier: "getWord", sender: self)
             }
         }))
@@ -104,12 +98,10 @@ class EnterWordViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    // Pass data to the Context Views: Segue.
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { if segue.identifier == "getWord" {
-//        let ChooseContextViewController = segue.destination as! ChooseContextViewController
-//        ChooseContextViewController.currentWord = currentWord
-//        }
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ChooseContextViewController {
+            // push currenWord to ChooseContextViewController
+        }
+    }
 }
-

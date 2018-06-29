@@ -12,8 +12,20 @@ class SocialContextTableViewController: UITableViewController {
 
     var storeSocialContext = [StoreSocialContext]()
     
-    // Set test array.
-    var socialTry: String = ""
+    // MARK: - Variables for social titles.
+    var socialTitle0: String = ""
+    var socialTitle1: String = ""
+    var socialTitle2: String = ""
+    
+    // MARK: - Variables for social description.
+    var socialDescription0: String = ""
+    var socialDescription1: String = ""
+    var socialDescription2: String = ""
+    
+    // MARK: - Variables for social Images.
+    var socialImage0: String = ""
+    var socialImage1: String = ""
+    var socialImage2: String = ""
     
     // Set array for cell title.
     var socialArray: [String] = []
@@ -22,31 +34,112 @@ class SocialContextTableViewController: UITableViewController {
     var detailArray: [String] = []
     
     // Set array for images.
-    var imagaArray: [String] = []
+    var imageArray: [String] = []
     
-    // var thumbNail
-    // var imageSocial
+    // MARK: - DemoArrays
+    var demoTitleArray = ["Definition of BEST","Best Countries for Buisness List"]
+    var demoDetailArray = ["Best definition is - excelling all others. How to use best in a sentence",
+                           "The U.S. continues its 6 year slide as Denmark repeats at the top in Forbes' annual Best Countries for Buisness."]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // FetchSocialContext
+        // FetchSocialContext. Fetch titles, descriptions and images.
         ContextController.shared.fetchSocialContext { (storeSocialContext) in
             if let storeSocialContext = storeSocialContext {
+                
                 // Turned off for demo.
-                // self.socialTry = (storeSocialContext.items?.first?.metatags?.first?.title)!
-                // print(self.socialTry)
-
-                // self.updateUI(with: self.storeSocialContext)
+          
+                //  Set title when value not nill.
+                if (storeSocialContext.items?[0].metatags?.first?.title) != nil {
+                    
+                    // Set title.
+                    self.socialTitle0 = (storeSocialContext.items?[0].metatags?.first?.title)!
+                    
+                    // If description not nill, add value otherwise set message.
+                    if (storeSocialContext.items?[0].metatags?.first?.description) != nil {
+                        self.socialDescription0 = (storeSocialContext.items?[0].metatags?.first?.description)!
+                    } else {
+                        self.socialDescription0 = "currently not available."
+                    }
+                    
+                    // If image nill, add value otherwise set message.
+                    if (storeSocialContext.items?[0].metatags?.first?.image) != nil {
+                        self.socialImage0 = (storeSocialContext.items?[0].metatags?.first?.image)!
+                    } else {
+                        self.socialImage0 = "currently not available."
+                    }
+                } else {
+                    // Set values when title nill.
+                    self.socialTitle0 = "currently not available."
+                    self.socialDescription0 = "currently not available."
+                    self.socialImage0 = "currently not available."
+                }
+                
+                //  Set title when value not nill.
+                if (storeSocialContext.items?[1].metatags?.first?.title) != nil  {
+                    
+                    //Set title.
+                    self.socialTitle1 = (storeSocialContext.items?[1].metatags?.first?.title)!
+                    
+                    // If description not nill, add value otherwise set message.
+                    if (storeSocialContext.items?[1].metatags?.first?.description) != nil {
+                        self.socialDescription1 = (storeSocialContext.items?[1].metatags?.first?.description)!
+                    } else {
+                        self.socialDescription1 = "currently not available."
+                    }
+                    
+                    // If image nill, add value otherwise set message.
+                    if (storeSocialContext.items?[1].metatags?.first?.image) != nil {
+                        self.socialImage1 = (storeSocialContext.items?[1].metatags?.first?.image)!
+                    } else {
+                        self.socialImage1 = "currently not available."
+                    }
+                } else {
+                    // Set values when title nill.
+                    self.socialTitle1 = "currently not available."
+                    self.socialDescription1 = "currently not available."
+                    self.socialImage1 = "currently not available."
+                }
+                
+                //  Set title when value not nill.
+                if (storeSocialContext.items?[2].metatags?.first?.title) != nil {
+                
+                    // Set title.
+                    self.socialTitle2 = (storeSocialContext.items?[2].metatags?.first?.title)!
+                    
+                    // If description not nill, add value otherwise set message.
+                    if (storeSocialContext.items?[2].metatags?.first?.description) != nil {
+                        self.socialDescription2 = (storeSocialContext.items?[2].metatags?.first?.description)!
+                    } else {
+                        self.socialDescription2 = "currently not available."
+                    }
+                    
+                    // If image nill, add value otherwise set message.
+                    if (storeSocialContext.items?[2].metatags?.first?.image) != nil {
+                        self.socialImage2 = (storeSocialContext.items?[2].metatags?.first?.image)!
+                    } else {
+                        self.socialImage2 = "currently not available."
+                    }
+                } else {
+                    // Set values when title nill.
+                    self.socialTitle2 = "currently not available."
+                    self.socialDescription2 = "currently not available."
+                    self.socialImage2 = "currently not available."
+                }
+                
             }
+                //self.updateUI(with: self.storeSocialContext) // Turned of for demo.
         }
-        // self.socialArray = ["\(self.socialTry)"]
     }
     
     // Update UI with.
     func updateUI(with storeSocialContext: [StoreSocialContext]) {
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.socialArray = ["\(self.socialTitle0)","\(self.socialTitle1)","\(self.socialTitle2)"]
+            self.detailArray = ["\(self.socialDescription0)","\(self.socialDescription1)","\(self.socialDescription2)"]
+            self.imageArray = ["\(self.socialImage0)","\(self.socialImage1)","\(self.socialImage2)"]
+            //self.tableView.reloadData()
         }
     }
     
@@ -63,7 +156,8 @@ class SocialContextTableViewController: UITableViewController {
     // Set amount of rows to objects in list.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           //return socialArray.count
-          return 1
+          return demoTitleArray.count
+          // return 1
     }
     
     // Set content for cells.
@@ -77,16 +171,12 @@ class SocialContextTableViewController: UITableViewController {
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         
         // Set text for Title and Detail.
-        cell.textLabel?.text = "Definition of BEST"
-        cell.detailTextLabel?.text = "Best definition is - excelling all others. How to use best in a sentence"
+        cell.textLabel?.text = demoTitleArray[indexPath.row]
+        cell.detailTextLabel?.text = demoDetailArray[indexPath.row]
         
         // Turned of for Demo.
         //cell.textLabel?.text = socialArray[indexPath.row]
-        //cell.detailTextLabel?.text = [indexPath.row]
-        //cell.imageView!.image = image;
-        
-        // Set text font.
-        cell.textLabel?.font = UIFont (name: "Heavy System", size: 40)
-        cell.detailTextLabel?.font = UIFont (name: "Heavy System", size: 20)
+        //cell.detailTextLabel?.text = detailArray[indexPath.row]
+        // cell.imageView!.image = image;
     }
 }

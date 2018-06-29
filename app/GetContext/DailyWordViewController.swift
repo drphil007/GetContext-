@@ -62,7 +62,6 @@ class DailyWordViewController: UIViewController {
         ContextController.shared.fetchRandomWord { (storeRandomWord) in
             if let storeRandomWord = storeRandomWord {
                 self.randomWord = (storeRandomWord.results.first?.word)!
-                print(self.randomWord)
                 self.updateUI(with: self.storeRandomWord)
             }
         }
@@ -75,26 +74,22 @@ class DailyWordViewController: UIViewController {
                     .first?.entries.first?.senses.first?.definitions)! {
                     self.longFinal = longDefinition
                 }
-                print(self.longFinal)
                 
                 // Short definition
                 for shortDefinition in (storeWordDescription.results.first?.lexicalEntries
                     .first?.entries.first?.senses.first?.shortDefinitions)! {
                     self.shortFinal = shortDefinition
                 }
-                print(self.shortFinal)
                 
                 // Sub definitions
                 for subDefinition in (storeWordDescription.results.first?.lexicalEntries
                     .first?.entries.first?.senses.first?.subsenses?.first?.definitions)! {
                     self.subFinal = subDefinition
                 }
-                print(self.subFinal)
                 
                 self.updateUI(with: self.storeWordDescription)
             }
         }
-
     }
 
     // Update UI with showRandomWord.

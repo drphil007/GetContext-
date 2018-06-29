@@ -75,40 +75,54 @@ class GeneralTableViewController: UITableViewController {
                     .first?.entries.first?.senses.first?.definitions)! {
                     self.longFinal = longDefinition
                 }
-                print(self.longFinal)
                 
                 // Example phrase
-                self.examplePhrase = (storeWordDescription.results.first?.lexicalEntries
-                    .first?.entries.first?.senses.first?.examples.first?.text)!
-                print(self.examplePhrase)
+                if (storeWordDescription.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.examples.first?.text) != nil {
+                    self.examplePhrase = (storeWordDescription.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.examples.first?.text)!
+                } else if (storeWordDescription.results.first?.lexicalEntries
+                    .first?.entries.first?.senses.first?.subsenses?.first?.examples.first?.text) != nil {
+                    // Alternative Example phrase
+                    self.subExamplePhrase = (storeWordDescription.results.first?.lexicalEntries
+                        .first?.entries.first?.senses.first?.subsenses?.first?.examples.first?.text)!
+                } else {
+                    self.examplePhrase = "currently not available."
+                }
 
-                // Alternative Example phrase
-                self.subExamplePhrase = (storeWordDescription.results.first?.lexicalEntries
-                    .first?.entries.first?.senses.first?.subsenses?.first?.examples.first?.text)!
-                print(self.subExamplePhrase)
-
+                // Lexical Features
+                if (storeWordDescription.results.first?.lexicalEntries
+                    .first?.entries.first?.grammaticalFeatures.first?.text) != nil {
                 // Grammatical F
                 self.grammaticalFeature = (storeWordDescription.results.first?.lexicalEntries
                     .first?.entries.first?.grammaticalFeatures.first?.text)!
-                print(self.grammaticalFeature)
+                } else {
+                    self.grammaticalFeature = "currently not available."
+                }
   
                 // Etymologies
                 for etymologies in (storeWordDescription.results.first?
                     .lexicalEntries.first?.entries.first?.etymologies)! {
                     self.etymolFinal = etymologies
-                    //print(self.etymolFinal)
                 }
-                print(self.etymolFinal)
-      
+                
                 // Lexical Category
+                if (storeWordDescription.results.first?
+                    .lexicalEntries.first?.lexicalCategory) != nil {
                 self.lexicalCategory = (storeWordDescription.results.first?
                     .lexicalEntries.first?.lexicalCategory)!
-                print(self.lexicalCategory)
+                } else {
+                    self.lexicalCategory = "currently not available."
+                }
 
                 // Phonetic spelling
+                if (storeWordDescription.results.first?
+                    .lexicalEntries.first?.pronunciations.first?.phoneticSpelling) != nil {
                 self.phoneticSpelling = (storeWordDescription.results.first?
                     .lexicalEntries.first?.pronunciations.first?.phoneticSpelling)!
-                print(self.phoneticSpelling)
+                } else {
+                    self.phoneticSpelling = "currently not available."
+                }
 
                 self.updateUI(with: self.storeWordDescription)
             }
@@ -143,14 +157,12 @@ class GeneralTableViewController: UITableViewController {
             
             // Set bool when clicked.
             cellOn = false
-            print(cellOn)
         } else {
             // Change content back to original data.
             self.tableView.reloadData()
             
             // Set bool when clicked.
             cellOn = true
-            print(cellOn)
         }
     }
     

@@ -210,7 +210,7 @@
         <!--Word-->
         <scene sceneID="2U6-s0-r3a">
             <objects>
-                <viewController id="E1O-3m-uto" customClass="EnterWordViewController" customModule="GetContext" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E1O-3m-uto" customClass="EnterWordViewController" customModule="GetContext" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EJv-jl-93q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,7 +255,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="wordFieldChanged:" destination="E1O-3m-uto" eventType="editingChanged" id="iGE-Wu-FHJ"/>
+                                    <action selector="wordFieldChanged:" destination="E1O-3m-uto" eventType="editingChanged" id="lTC-3e-2hQ"/>
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GetContext_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vhI-Ya-RpX">
@@ -312,7 +312,7 @@
         <!--Content-->
         <scene sceneID="jIU-pk-8we">
             <objects>
-                <viewController id="OXY-Fb-fSV" customClass="ChooseContextViewController" customModule="GetContext" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OXY-Fb-fSV" customClass="ChooseContextViewController" customModule="GetContext" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNe-3i-rbx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -504,21 +504,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="uIm-8Q-pcu">
-                                            <rect key="frame" x="142" y="28.5" width="39.5" height="25.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" id="uIm-8Q-pcu">
+                                            <rect key="frame" x="142" y="28.5" width="45.5" height="25.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                             <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="GVS-mT-kIS">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" id="GVS-mT-kIS">
                                             <rect key="frame" x="142" y="57.5" width="46.5" height="21.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="MW.jpg" id="IwC-4V-Xhw">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Solid_gray-1" id="IwC-4V-Xhw">
                                             <rect key="frame" x="16" y="0.0" width="111" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -621,9 +621,9 @@
         <image name="Content" width="30" height="30"/>
         <image name="GetContext_Logo" width="126" height="110"/>
         <image name="GetContext_sample8" width="220" height="220"/>
-        <image name="MW.jpg" width="245" height="245"/>
         <image name="Phrases" width="30" height="30"/>
         <image name="Social" width="30" height="30"/>
+        <image name="Solid_gray-1" width="200" height="200"/>
         <image name="Word" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
         <image name="info" width="30" height="30"/>
